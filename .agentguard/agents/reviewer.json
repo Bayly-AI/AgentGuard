@@ -1,0 +1,8 @@
+{
+  "role_id": "reviewer",
+  "role_name": "Code Review & Security Auditor Agent",
+  "scope": "root",
+  "permitted_tools": ["view_file", "query_graph", "run_command"],
+  "forbidden_tools": ["replace_file_content", "write_to_file", "force_git_push"],
+  "parent_role_id": null
+}

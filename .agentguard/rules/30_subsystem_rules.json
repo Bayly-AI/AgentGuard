@@ -1,0 +1,10 @@
+[
+  {
+    "id": "cr_subsys_001_api_versioning",
+    "title": "API Subsystem Backward Compatibility",
+    "priority": 2,
+    "target_scope": "api",
+    "restricted_actions": ["break_api_contract"],
+    "content": "Public API endpoints must preserve backward compatibility. Breaking schema changes require explicit version increment and deprecation spans."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cr_org_001_no_direct_push",
+    "title": "Strict Main Branch Push Lock",
+    "priority": 4,
+    "target_scope": "root",
+    "restricted_actions": ["direct_git_push_main", "force_git_push"],
+    "content": "No agent or human automated script may perform direct git push to main or production release branches. All changes must go through pull request verification and code review."
+  },
+  {
+    "id": "cr_org_002_no_data_deletion",
+    "title": "Database Drop Protection",
+    "priority": 4,
+    "target_scope": "root",
+    "restricted_actions": ["drop_database", "truncate_tables", "delete_production_s3"],
+    "content": "Destructive database operations and bucket wipe actions are strictly forbidden across all operational agent roles."
+  },
+  {
+    "id": "cr_org_003_secret_sanitization",
+    "title": "Strict Secret Masking",
+    "priority": 4,
+    "target_scope": "root",
+    "allowed_actions": ["mask_credentials", "use_vault_broker"],
+    "content": "API keys, private tokens, and credentials must never be written to logs, prompts, or commit messages."
+  }
+]
