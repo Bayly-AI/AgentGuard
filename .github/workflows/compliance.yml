@@ -1,0 +1,38 @@
+name: AgentGuard Governance & PR Compliance Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  governance_pr_gate:
+    name: AgentGuard Governance & Rule Priority Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install AgentGuard
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Audit Repository Substrate Graph & Cycles
+        run: |
+          agentguard validate --json
+
+      - name: Verify Developer & Reviewer Role Postures
+        run: |
+          agentguard route --role developer --json
+          agentguard route --role reviewer --json
+
+      - name: Security Gate RBAC Test Check
+        run: |
+          agentguard gate --role developer --tool view_file
+          agentguard gate --role reviewer --tool view_file

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "cr_role_001_concise_synthesis",
+    "title": "Concise Developer Synthesis",
+    "priority": 1,
+    "target_scope": "root",
+    "allowed_actions": ["summarize_changes"],
+    "content": "Provide concise, structured markdown updates. Avoid re-stating unchanged code or outputting full transcripts."
+  }
+]

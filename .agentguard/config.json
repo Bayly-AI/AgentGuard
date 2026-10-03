@@ -1,0 +1,21 @@
+{
+  "project_name": "AgentGuard Governed Workspace",
+  "version": "1.0.0",
+  "db_path": ".agentguard/graph.db",
+  "scan_directories": [
+    "AGENTS.md",
+    ".agentguard/rules",
+    ".agentguard/agents",
+    ".agentguard/knowledge",
+    "docs",
+    "src"
+  ],
+  "rules_priority_order": [
+    "10_org_invariants.json",
+    "20_repo_standards.json",
+    "30_subsystem_rules.json",
+    "40_role_guidelines.json"
+  ],
+  "pre_commit_hook": true,
+  "zero_prompt_tax": true
+}

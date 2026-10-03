@@ -1,0 +1,26 @@
+{
+  "name": "@agentguard/node-plugin",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AgentGuard Node.js Plugin: Standalone Cognitive Substrate & Security Gate for JS/TS Agentic Systems",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bayly-AI/AgentGuard.git"
+  },
+  "keywords": [
+    "agentguard",
+    "ai-agents",
+    "agent-governance",
+    "security-gate",
+    "mcp",
+    "langchain",
+    "vercel-ai"
+  ],
+  "author": "Bayly AI",
+  "license": "Apache-2.0"
+}
