@@ -36,6 +36,14 @@ class TestAgentGuardMCPServer(unittest.TestCase):
         res = json.loads(res_str)
         self.assertIn("total_records", res)
 
+    def test_handle_finops_estimate_tool_call(self):
+        res_str = self.server.handle_tool_call(
+            "agentguard_finops",
+            {"action": "estimate", "prompt": "Hello world", "tier": "standard"},
+        )
+        res = json.loads(res_str)
+        self.assertIn("estimated_cost_usd", res)
+
 
 if __name__ == "__main__":
     unittest.main()

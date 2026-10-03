@@ -1,6 +1,6 @@
 {
   "name": "agentguard-node-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "Non-bypassable enterprise governance engine and zero-prompt-tax security gate for Node.js AI agents, LangChain JS, Vercel AI SDK, and FastMCP servers.",
   "main": "dist/index.js",

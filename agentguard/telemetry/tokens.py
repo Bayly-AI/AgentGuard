@@ -28,6 +28,33 @@ class TokenTelemetry:
     def ledger_path(self) -> Path:
         return self.workspace_dir / ".agentguard" / "finops" / "token_telemetry.jsonl"
 
+    def estimate(
+        self,
+        prompt: str,
+        completion: str = "",
+        tier: str = "standard",
+    ) -> Dict[str, Any]:
+        """Estimate token counts and projected cost for a prompt and completion."""
+        p_len = len(prompt)
+        c_len = len(completion)
+        p_tok = max(1, math.ceil(p_len / 4.0)) if p_len > 0 else 0
+        c_tok = max(1, math.ceil(c_len / 4.0)) if c_len > 0 else 0
+        tot_tok = p_tok + c_tok
+
+        tier_key = tier.lower() if tier.lower() in TIER_PRICING else "standard"
+        pricing = TIER_PRICING[tier_key]
+        cost = (p_tok / 1_000_000.0) * pricing["input"] + (c_tok / 1_000_000.0) * pricing["output"]
+
+        return {
+            "prompt_length_chars": p_len,
+            "prompt_tokens": p_tok,
+            "completion_length_chars": c_len,
+            "completion_tokens": c_tok,
+            "total_tokens": tot_tok,
+            "tier": tier_key,
+            "estimated_cost_usd": round(cost, 8),
+        }
+
     def _ensure_dir(self) -> None:
         self.ledger_path.parent.mkdir(parents=True, exist_ok=True)
 

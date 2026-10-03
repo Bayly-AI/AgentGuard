@@ -177,6 +177,16 @@ export class AgentGuardClient {
   }
 
   /**
+   * Estimate token counts and projected model cost for prompt and completion
+   */
+  public async estimateTokens(prompt: string, completion?: string, tier: string = "standard"): Promise<any> {
+    const args = ["finops", "estimate", "--prompt", prompt, "--tier", tier, "--json"];
+    if (completion) args.push("--completion", completion);
+    const output = await this.runCommand(args);
+    return JSON.parse(output);
+  }
+
+  /**
    * Record token telemetry entry to ledger
    */
   public async recordTokenTelemetry(entry: {

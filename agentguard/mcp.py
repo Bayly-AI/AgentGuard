@@ -63,7 +63,7 @@ class AgentGuardMCPServer:
                 "inputSchema": {
                     "type": "object",
                     "properties": {
-                        "action": {"type": "string", "enum": ["record", "histogram", "check"], "default": "histogram"},
+                        "action": {"type": "string", "enum": ["estimate", "record", "histogram", "check"], "default": "histogram"},
                         "prompt": {"type": "string", "description": "Prompt text for record action"},
                         "user_id": {"type": "string", "default": "default_user"},
                         "bins": {"type": "integer", "default": 10},
@@ -126,7 +126,14 @@ class AgentGuardMCPServer:
             from pathlib import Path
             telemetry = TokenTelemetry(workspace_dir=Path(self.workspace_dir))
             action = args.get("action", "histogram")
-            if action == "record":
+            if action == "estimate":
+                est = telemetry.estimate(
+                    prompt=args.get("prompt", ""),
+                    completion=args.get("completion", ""),
+                    tier=args.get("tier", "standard"),
+                )
+                return json.dumps(est)
+            elif action == "record":
                 rec = telemetry.record(
                     prompt=args.get("prompt", ""),
                     user_id=args.get("user_id", "default_user"),

@@ -109,6 +109,10 @@ test("Node.js AgentGuard Plugin Test Suite", async (t) => {
     });
     assert.match(recOutput, /Recorded telemetry entry/);
 
+    const est = await client.estimateTokens("Hello AgentGuard", "World", "standard");
+    assert.strictEqual(est.total_tokens, 6);
+    assert.strictEqual(est.tier, "standard");
+
     const hist = await client.getTokenHistogram("node_tester", 5);
     assert.strictEqual(hist.total_records, 1);
     assert.strictEqual(hist.bins.length, 5);

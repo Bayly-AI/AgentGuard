@@ -117,6 +117,12 @@ def main():
     p_hist.add_argument("--bins", type=int, default=10, help="Histogram bin count")
     p_hist.add_argument("--json", action="store_true", help="Output in JSON format")
 
+    p_est = p_finops_sub.add_parser("estimate", help="Estimate prompt token count and projected model cost")
+    p_est.add_argument("--prompt", required=True, help="Prompt text")
+    p_est.add_argument("--completion", default="", help="Completion text")
+    p_est.add_argument("--tier", default="standard", help="Pricing tier (light, standard, reasoning)")
+    p_est.add_argument("--json", action="store_true", help="Output in JSON format")
+
     p_check = p_finops_sub.add_parser("check", help="Run 90-day FinOps token telemetry audit")
     p_check.add_argument("--user", default="default_user", help="User ID")
     p_check.add_argument("--days", type=int, default=90, help="Audit timeframe days")
@@ -404,6 +410,17 @@ def main():
                 completion=args.completion,
             )
             print(f"✓ Recorded telemetry entry '{rec['id']}' ({rec['total_tokens']} tokens, ${rec['cost_usd']:.6f} USD)")
+
+        elif action == "estimate":
+            est = telemetry.estimate(prompt=args.prompt, completion=args.completion, tier=args.tier)
+            if args.json:
+                print(json.dumps(est, indent=2))
+            else:
+                print(f"\n--- FinOps Token Estimation ({est['tier']} tier) ---")
+                print(f"Prompt Tokens: {est['prompt_tokens']} ({est['prompt_length_chars']} chars)")
+                print(f"Completion Tokens: {est['completion_tokens']} ({est['completion_length_chars']} chars)")
+                print(f"Total Tokens: {est['total_tokens']}")
+                print(f"Estimated Cost: ${est['estimated_cost_usd']:.6f} USD\n")
 
         elif action == "histogram":
             hist = telemetry.histogram(user_id=args.user, bins_count=args.bins)
