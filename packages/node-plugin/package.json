@@ -2,7 +2,7 @@
   "name": "@agentguard/node-plugin",
   "version": "1.0.0",
   "type": "module",
-  "description": "AgentGuard Node.js Plugin: Standalone Cognitive Substrate & Security Gate for JS/TS Agentic Systems",
+  "description": "Non-bypassable enterprise governance engine and zero-prompt-tax security gate for Node.js AI agents, LangChain JS, Vercel AI SDK, and FastMCP servers.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
