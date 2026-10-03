@@ -108,6 +108,16 @@ class TestAgentGuardGraph(unittest.TestCase):
         self.assertTrue(len(results) > 0)
         self.assertEqual(results[0].node.id, "doc:security")
 
+    def test_agentgraph_alias_and_init(self):
+        from agentguard import AgentGraph, AgentGuardGraph
+        self.assertIs(AgentGraph, AgentGuardGraph)
+
+        temp_workspace = Path(self.temp_dir.name) / "agentgraph_init_workspace"
+        graph = AgentGraph.init(workspace_dir=temp_workspace, no_hooks=True)
+        self.assertTrue((temp_workspace / ".agentguard").exists())
+        self.assertTrue((temp_workspace / "AGENTS.md").exists())
+        self.assertGreater(len(graph.nodes), 0)
+
 
 if __name__ == "__main__":
     unittest.main()

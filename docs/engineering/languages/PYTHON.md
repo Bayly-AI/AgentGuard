@@ -21,15 +21,18 @@ pip install -e .
 
 ## 2. Core Python API Reference
 
-### A. Graph Engine Initialization (`AgentGuardGraph`)
+### A. Graph Engine Initialization (`AgentGraph` / `AgentGuardGraph`)
 
 ```python
 from pathlib import Path
-from agentguard.core.graph import AgentGuardGraph
+from agentguard import AgentGraph
 
-# Initialize and load Quad-Graph substrate from SQLite
+# Option 1: Initialize workspace (.agentguard/, AGENTS.md, git hooks) & sync substrate
+graph = AgentGraph.init(workspace_dir=".", no_hooks=False)
+
+# Option 2: Load existing Quad-Graph substrate from SQLite
 db_path = Path(".agentguard/graph.db")
-graph = AgentGuardGraph(db_path=db_path)
+graph = AgentGraph(db_path=db_path)
 if db_path.exists():
     graph.load_from_db()
 ```

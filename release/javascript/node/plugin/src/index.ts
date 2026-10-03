@@ -2,7 +2,7 @@ import { AgentGuardClient } from "./client.ts";
 import type { PluginOptions, SecurityGateResult } from "./types.ts";
 
 export type * from "./types.ts";
-export { AgentGuardClient } from "./client.ts";
+export { AgentGuardClient, AgentGuardClient as AgentGraph } from "./client.ts";
 
 /**
  * Main AgentGuard Node.js Plugin class.

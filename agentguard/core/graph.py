@@ -240,3 +240,18 @@ class AgentGuardGraph:
         logs = store.load_audit_logs(limit=limit, role_id=role_id)
         store.close()
         return logs
+
+    @classmethod
+    def init(cls, workspace_dir: Path | str = ".", no_hooks: bool = False) -> "AgentGuardGraph":
+        """Initialize workspace directory layout (.agentguard/, AGENTS.md, git hooks) and sync substrate."""
+        from agentguard.init.initializer import RepositoryInitializer
+        from agentguard.sync.syncer import RepositorySyncer
+
+        target_dir = Path(workspace_dir)
+        RepositoryInitializer.initialize_repository(target_dir=target_dir, install_hooks=not no_hooks)
+        graph = RepositorySyncer.sync_repository(root_dir=target_dir)
+        return graph
+
+
+# Alias AgentGraph for seamless developer API access
+AgentGraph = AgentGuardGraph

@@ -4,7 +4,7 @@ import { mkdtempSync, rmSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { tmpdir } from "node:os";
 
-import { AgentGuardClient, AgentGuardPlugin } from "../src/index.ts";
+import { AgentGuardClient, AgentGuardPlugin, AgentGraph } from "../src/index.ts";
 
 let REPO_ROOT = process.cwd();
 for (let i = 0; i < 5; i++) {
@@ -115,5 +115,11 @@ test("Node.js AgentGuard Plugin Test Suite", async (t) => {
 
     const check = await client.runTokenCheck("node_tester", 90);
     assert.strictEqual(check.total_records, 1);
+  });
+
+  await t.test("10. Verify AgentGraph alias import and init()", async () => {
+    assert.strictEqual(AgentGraph, AgentGuardClient);
+    const agClient = new AgentGraph({ cliPath: CLI_PATH, workspaceDir: tempDir });
+    assert.strictEqual(typeof agClient.init, "function");
   });
 });

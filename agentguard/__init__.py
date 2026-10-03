@@ -17,7 +17,7 @@ from agentguard.core.models import (
     SearchResult,
     ValidationReport,
 )
-from agentguard.core.graph import AgentGuardGraph
+from agentguard.core.graph import AgentGraph, AgentGuardGraph
 
 __all__ = [
     "AgentGraphNode",
@@ -28,4 +28,5 @@ __all__ = [
     "SearchResult",
     "ValidationReport",
     "AgentGuardGraph",
+    "AgentGraph",
 ]
