@@ -152,9 +152,12 @@ agentguard taguchi --snr-values "10.0, 12.0, 8.0, 11.0" --snr-type smaller_the_b
 ---
 
 ### 12. `agentguard finops`
-Manages token telemetry recording, 90-day FinOps usage analytics, statistical metrics (min, max, mean, median $p_{50}$, $p_{95}$, $p_{99}$, std dev), model cost breakdowns, and equal-width distribution histograms.
+Manages token telemetry recording, prompt token estimation, projected model cost calculations, 90-day FinOps usage analytics, statistical metrics (min, max, mean, median $p_{50}$, $p_{95}$, $p_{99}$, std dev), model cost breakdowns, and equal-width distribution histograms.
 
 ```bash
+# Estimate token count and projected cost before sending prompt
+agentguard finops estimate --prompt "Synthesize system prompt" --tier standard
+
 # Record an agent interaction to telemetry ledger
 agentguard finops record --prompt "Synthesize prompt" --user raybayly --model claude-3-5-sonnet
 
@@ -163,4 +166,14 @@ agentguard finops histogram --user raybayly --bins 10
 
 # Run 90-day FinOps token telemetry audit
 agentguard finops check --user raybayly --days 90
+```
+
+---
+
+### 13. `agentguard mcp` (Model Context Protocol Server)
+Starts stdio JSON-RPC 2.0 Model Context Protocol server exposing AgentGuard tools directly to Claude Desktop and Claude Code.
+
+```bash
+# Start MCP server for workspace
+agentguard mcp --dir .
 ```

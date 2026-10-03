@@ -27,6 +27,12 @@ Executes the full 5 Hath0r Quality Gates suite sequentially.
 ### `runTaguchi(options?: TaguchiOptions): Promise<any>`
 Generates Taguchi Orthogonal Arrays (L4, L8, L9, L12, L18) or computes Signal-to-Noise Ratio (SNR) in dB.
 
+### `Class Alias: AgentGraph`
+`AgentGraph` is exported as a direct class alias for `AgentGuardClient` (`import { AgentGraph } from "agentguard-node-plugin"`).
+
+### `estimateTokens(prompt: string, completion?: string, tier?: string): Promise<TokenEstimationResult>`
+Estimates prompt/completion token count and projected model cost USD.
+
 ### `recordTokenTelemetry(entry: TelemetryRecord): Promise<string>`
 Records an agent prompt interaction to the FinOps telemetry ledger.
 
