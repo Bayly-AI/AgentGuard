@@ -122,6 +122,10 @@ def main():
     p_check.add_argument("--days", type=int, default=90, help="Audit timeframe days")
     p_check.add_argument("--json", action="store_true", help="Output in JSON format")
 
+    # 15. mcp / serve-mcp
+    p_mcp = subparsers.add_parser("mcp", aliases=["serve-mcp"], help="Start Model Context Protocol (MCP) Stdio Server for Claude Desktop & Claude Code")
+    p_mcp.add_argument("--dir", default=".", help="Workspace root directory")
+
     args = parser.parse_args()
 
     # Dispatch Commands
@@ -427,6 +431,11 @@ def main():
                 print(f"Total Consumed: {rep['total_tokens']} tokens (${rep['total_cost_usd']:.4f} USD)\n")
                 print(rep['ascii_histogram'])
                 print()
+
+    elif args.command in ("mcp", "serve-mcp"):
+        from agentguard.mcp import run_mcp_server
+
+        run_mcp_server(workspace_dir=args.dir)
 
 
 if __name__ == "__main__":

@@ -13,6 +13,7 @@
 ## 🚀 Quick Links & Downloads
 
 - 📦 **NPM Node.js Plugin Package:** [`npm install agentguard-node-plugin`](https://www.npmjs.com/package/agentguard-node-plugin)
+- 🤖 **Claude Desktop & Claude Code MCP Integration:** [CLAUDE_MARKETPLACE.md](docs/engineering/CLAUDE_MARKETPLACE.md)
 - 🐍 **Standalone Python CLI:** [`./release/python/cli/agentguard`](release/python/cli/)
 - 📖 **Technical Reference & Developer Guide:** [README.TECHNICAL.md](README.TECHNICAL.md)
 
