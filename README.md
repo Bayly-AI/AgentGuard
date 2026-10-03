@@ -1,5 +1,6 @@
 # AgentGuard: Enterprise Governance Engine for Autonomous AI Agents
 
+[![npm version](https://img.shields.io/npm/v/agentguard-node-plugin.svg)](https://www.npmjs.com/package/agentguard-node-plugin)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Zero Prompt Tax](https://img.shields.io/badge/token%20savings-95%25-success.svg)](#-measurable-roi--token-economics)
 [![Compliance](https://img.shields.io/badge/compliance-Hath0r%20100%25-brightgreen.svg)](docs/business/HATH0R_COMPLIANCE.md)
@@ -9,11 +10,11 @@
 
 ---
 
-## 🚀 Technical Guide & Setup Quick Link
+## 🚀 Quick Links & Downloads
 
-Looking for installation instructions, CLI references, developer tutorials, or integration guides?
-
-➡️ **[Read the Technical Reference & Developer Guide (README.TECHNICAL.md)](README.TECHNICAL.md)**
+- 📦 **NPM Node.js Plugin Package:** [`npm install agentguard-node-plugin`](https://www.npmjs.com/package/agentguard-node-plugin)
+- 🐍 **Standalone Python CLI:** [`./release/python/cli/agentguard`](release/python/cli/)
+- 📖 **Technical Reference & Developer Guide:** [README.TECHNICAL.md](README.TECHNICAL.md)
 
 ---
 

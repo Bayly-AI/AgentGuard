@@ -40,7 +40,13 @@ cd AgentGuard
 pip install -e .
 ```
 
-### Option 2: Run Standalone Binary directly (No Python Install Required)
+### Option 2: Install Node.js Plugin from NPM Registry
+
+```bash
+npm install agentguard-node-plugin
+```
+
+### Option 3: Run Standalone Binary directly (No Python Install Required)
 
 The standalone executable CLI is packaged as a single zero-dependency binary in [./release/python/cli/agentguard](file:///Users/raybayly/Development/OpenSource/AgentGuard/release/python/cli/agentguard):
 
