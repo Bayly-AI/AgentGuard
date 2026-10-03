@@ -24,6 +24,18 @@ Audits Quad-Graph topology, Priority Tier DAGs, cycle detection, and dangling ed
 ### `runQualityGate(): Promise<{ success: boolean, output: string }>`
 Executes the full 5 Hath0r Quality Gates suite sequentially.
 
+### `runTaguchi(options?: TaguchiOptions): Promise<any>`
+Generates Taguchi Orthogonal Arrays (L4, L8, L9, L12, L18) or computes Signal-to-Noise Ratio (SNR) in dB.
+
+### `recordTokenTelemetry(entry: TelemetryRecord): Promise<string>`
+Records an agent prompt interaction to the FinOps telemetry ledger.
+
+### `getTokenHistogram(user?: string, bins?: number): Promise<HistogramResult>`
+Computes equal-width statistical token usage distribution histogram (min, max, mean, median, p95, p99, std dev).
+
+### `runTokenCheck(user?: string, days?: number): Promise<FinOpsReport>`
+Executes trailing 90-day FinOps usage analytics and model cost audit.
+
 ---
 
 ## Class: `AgentGuardPlugin`

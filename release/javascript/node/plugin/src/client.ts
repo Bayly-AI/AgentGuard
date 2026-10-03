@@ -157,4 +157,67 @@ export class AgentGuardClient {
       return { success: false, output: err.message };
     }
   }
+
+  /**
+   * Perform Taguchi Orthogonal Array matrix generation or SNR evaluation
+   */
+  public async runTaguchi(options: {
+    array?: "L4" | "L8" | "L9" | "L12" | "L18";
+    factors?: string[];
+    snrValues?: number[];
+    snrType?: "smaller_the_better" | "larger_the_better" | "nominal_the_best";
+  } = {}): Promise<any> {
+    const args = ["taguchi", "--json"];
+    if (options.array) args.push("--array", options.array);
+    if (options.factors) args.push("--factors", options.factors.join(","));
+    if (options.snrValues) args.push("--snr-values", options.snrValues.join(","));
+    if (options.snrType) args.push("--snr-type", options.snrType);
+    const output = await this.runCommand(args);
+    return JSON.parse(output);
+  }
+
+  /**
+   * Record token telemetry entry to ledger
+   */
+  public async recordTokenTelemetry(entry: {
+    prompt: string;
+    user?: string;
+    model?: string;
+    tier?: string;
+    completion?: string;
+  }): Promise<string> {
+    const args = [
+      "finops",
+      "record",
+      "--prompt",
+      entry.prompt,
+      "--user",
+      entry.user || "default_user",
+      "--model",
+      entry.model || "claude-3-5-sonnet",
+      "--tier",
+      entry.tier || "standard",
+    ];
+    if (entry.completion) args.push("--completion", entry.completion);
+    return await this.runCommand(args);
+  }
+
+  /**
+   * Compute FinOps token usage distribution histogram
+   */
+  public async getTokenHistogram(user?: string, bins: number = 10): Promise<any> {
+    const args = ["finops", "histogram", "--bins", String(bins), "--json"];
+    if (user) args.push("--user", user);
+    const output = await this.runCommand(args);
+    return JSON.parse(output);
+  }
+
+  /**
+   * Run 90-day FinOps token telemetry audit
+   */
+  public async runTokenCheck(user: string = "default_user", days: number = 90): Promise<any> {
+    const args = ["finops", "check", "--user", user, "--days", String(days), "--json"];
+    const output = await this.runCommand(args);
+    return JSON.parse(output);
+  }
 }

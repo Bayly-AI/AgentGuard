@@ -94,3 +94,36 @@ export async function executeGovernedTool(
   return await toolFn();
 }
 ```
+
+---
+
+## 4. Taguchi Optimization & FinOps Token Histogram Usage
+
+```typescript
+import { AgentGuardClient } from "agentguard-node-plugin";
+
+const client = new AgentGuardClient();
+
+// Generate L9 Taguchi Orthogonal Array Matrix
+const matrix = await client.runTaguchi({
+  array: "L9",
+  factors: ["temperature", "pressure", "time"],
+});
+
+// Compute Signal-to-Noise Ratio (SNR) in dB
+const snr = await client.runTaguchi({
+  snrValues: [10.0, 12.0, 8.0, 11.0],
+  snrType: "smaller_the_better",
+});
+
+// Record token usage telemetry
+await client.recordTokenTelemetry({
+  prompt: "Synthesize prompt",
+  user: "developer_1",
+  model: "claude-3-5-sonnet",
+  completion: "Response text",
+});
+
+// Get 10-bin token usage distribution histogram
+const histogram = await client.getTokenHistogram("developer_1", 10);
+```
