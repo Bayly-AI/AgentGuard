@@ -88,10 +88,39 @@ def main():
     p_bot.add_argument("--dir", default=".", help="Workspace directory")
 
     # 12. quality-gate / check
-    p_gate = subparsers.add_parser("quality-gate", aliases=["check"], help="Run full Hath0r-compliant Quality Gate suite")
-    p_gate.add_argument("--dir", default=".", help="Workspace root directory")
-    p_gate.add_argument("--db", default=".agentguard/graph.db")
-    p_gate.add_argument("--json", action="store_true", help="Output compliance report in JSON format")
+    p_qg = subparsers.add_parser("quality-gate", aliases=["check"], help="Run full Hath0r-compliant Quality Gate suite")
+    p_qg.add_argument("--dir", default=".", help="Workspace root directory")
+    p_qg.add_argument("--db", default=".agentguard/graph.db")
+    p_qg.add_argument("--json", action="store_true", help="Output compliance report in JSON format")
+
+    # 13. taguchi / optimize
+    p_taguchi = subparsers.add_parser("taguchi", aliases=["optimize"], help="Taguchi Methods for Robust Design & Orthogonal Array Testing")
+    p_taguchi.add_argument("--array", choices=["L4", "L8", "L9", "L12", "L18"], default="L9", help="Orthogonal Array type")
+    p_taguchi.add_argument("--factors", default=None, help="Comma-separated factor names (e.g. 'temp,pressure,time')")
+    p_taguchi.add_argument("--snr-values", default=None, help="Comma-separated float response values to compute SNR")
+    p_taguchi.add_argument("--snr-type", choices=["smaller_the_better", "larger_the_better", "nominal_the_best"], default="smaller_the_better")
+    p_taguchi.add_argument("--json", action="store_true", help="Output matrix or analysis in JSON format")
+
+    # 14. finops / tokens
+    p_finops = subparsers.add_parser("finops", aliases=["tokens"], help="FinOps Token Telemetry and Distribution Histogram Analytics")
+    p_finops_sub = p_finops.add_subparsers(dest="finops_action", required=False)
+
+    p_rec = p_finops_sub.add_parser("record", help="Record token telemetry entry to ledger")
+    p_rec.add_argument("--prompt", required=True, help="Prompt text")
+    p_rec.add_argument("--user", default="default_user", help="User ID")
+    p_rec.add_argument("--model", default="claude-3-5-sonnet", help="Model name")
+    p_rec.add_argument("--tier", default="standard", help="Pricing tier (light, standard, reasoning)")
+    p_rec.add_argument("--completion", default="", help="Completion text")
+
+    p_hist = p_finops_sub.add_parser("histogram", help="Compute equal-width token telemetry distribution histogram")
+    p_hist.add_argument("--user", default=None, help="Filter by User ID")
+    p_hist.add_argument("--bins", type=int, default=10, help="Histogram bin count")
+    p_hist.add_argument("--json", action="store_true", help="Output in JSON format")
+
+    p_check = p_finops_sub.add_parser("check", help="Run 90-day FinOps token telemetry audit")
+    p_check.add_argument("--user", default="default_user", help="User ID")
+    p_check.add_argument("--days", type=int, default=90, help="Audit timeframe days")
+    p_check.add_argument("--json", action="store_true", help="Output in JSON format")
 
     args = parser.parse_args()
 
@@ -326,6 +355,78 @@ def main():
             print("\n=======================================================")
             print("  Hath0r Quality Gates Status: ALL GATES PASSED (100% Compliant)")
             print("=======================================================\n")
+
+    elif args.command in ("taguchi", "optimize"):
+        from agentguard.governance.taguchi import ArrayType, Factor, SNRType, TaguchiEngine, calculate_snr
+
+        if args.snr_values:
+            vals = [float(v.strip()) for v in args.snr_values.split(",")]
+            stype = SNRType(args.snr_type)
+            snr_val = calculate_snr(vals, snr_type=stype)
+            if args.json:
+                print(json.dumps({"snr_db": round(snr_val, 4), "snr_type": stype.value, "values": vals}, indent=2))
+            else:
+                print(f"Taguchi Signal-to-Noise Ratio ({stype.value}): {snr_val:.4f} dB")
+        else:
+            array_t = ArrayType(args.array)
+            raw_factors = args.factors.split(",") if args.factors else ["Factor_1", "Factor_2", "Factor_3"]
+            factors = [Factor(name=f.strip(), levels=[1, 2] if array_t != ArrayType.L9 else [1, 2, 3]) for f in raw_factors]
+
+            matrix = TaguchiEngine.generate_matrix(array_type=array_t, factors=factors)
+
+            if args.json:
+                print(json.dumps({"array_type": array_t.value, "factors": [f.name for f in factors], "runs": matrix}, indent=2))
+            else:
+                print(f"\n--- Taguchi Orthogonal Array Matrix ({array_t.value}) ---")
+                print(f"Total Runs: {len(matrix)}")
+                print(f"Factors: {', '.join(f.name for f in factors)}\n")
+                for run in matrix:
+                    factor_str = ", ".join(f"{k}={v}" for k, v in run.items() if k != "run_id")
+                    print(f"  Run #{run['run_id']}: {factor_str}")
+                print()
+
+    elif args.command in ("finops", "tokens"):
+        from agentguard.telemetry.tokens import TokenTelemetry
+
+        telemetry = TokenTelemetry()
+        action = getattr(args, "finops_action", None) or "check"
+
+        if action == "record":
+            rec = telemetry.record(
+                prompt=args.prompt,
+                user_id=args.user,
+                model=args.model,
+                tier=args.tier,
+                completion=args.completion,
+            )
+            print(f"✓ Recorded telemetry entry '{rec['id']}' ({rec['total_tokens']} tokens, ${rec['cost_usd']:.6f} USD)")
+
+        elif action == "histogram":
+            hist = telemetry.histogram(user_id=args.user, bins_count=args.bins)
+            if args.json:
+                print(json.dumps(hist, indent=2))
+            else:
+                print(f"\n--- FinOps Token Telemetry Histogram ({hist['total_records']} records) ---")
+                print(f"Total Tokens: {hist['total_tokens']} | Total Cost: ${hist['total_cost_usd']:.4f} USD")
+                print(f"Stats: Min={hist['stats']['min']}, Max={hist['stats']['max']}, Mean={hist['stats']['mean']}, Median={hist['stats']['median']}, p95={hist['stats']['p95']}\n")
+                print("Range           Count      %     Cumulative %  Distribution")
+                print("-------------------------------------------------------------------------")
+                for b in hist.get("bins", []):
+                    range_str = f"[{b['bin_start']:.1f} - {b['bin_end']:.1f}]".ljust(15)
+                    print(f"{range_str} {str(b['count']).rjust(5)}   {b['percentage']:5.1f}%     {b['cumulative_percentage']:5.1f}%      {b['ascii_bar']}")
+                print()
+
+        else:  # check / summary
+            rep = telemetry.generate_report(user_id=args.user, days=args.days)
+            if args.json:
+                print(json.dumps(rep, indent=2))
+            else:
+                print(f"\n--- FinOps Token Telemetry Audit (User: {rep['user_id']}, {rep['days']} Days) ---")
+                print(f"Total Requests: {rep['total_records']}")
+                print(f"Prompt Tokens: {rep['total_prompt_tokens']} | Completion Tokens: {rep['total_completion_tokens']}")
+                print(f"Total Consumed: {rep['total_tokens']} tokens (${rep['total_cost_usd']:.4f} USD)\n")
+                print(rep['ascii_histogram'])
+                print()
 
 
 if __name__ == "__main__":

@@ -23,6 +23,8 @@ The `agentguard` CLI serves as the governed front door for repository initializa
 | `agentguard audit` | Retrieve operational trace log history and execution provenance | 0 on success |
 | `agentguard bot` | Autonomous workspace watcher and graph health checker | 0 if healthy, 1 if degraded |
 | `agentguard quality-gate` | Execute full Hath0r-compliant Quality Gates suite (Sync, DAG Audit, RBAC, Unit Tests, Build Verification) | 0 if 100% compliant, 1 on failure |
+| `agentguard taguchi` | Generate Taguchi Orthogonal Arrays (L4, L8, L9, L12, L18) and calculate SNR / Quality Loss | 0 on success |
+| `agentguard finops` | FinOps token telemetry recording, 90-day usage analytics, and distribution histogram generation | 0 on success |
 
 ---
 
@@ -122,4 +124,43 @@ Prints recent execution trace log history and gate evaluation records.
 ```bash
 agentguard audit --limit 20
 agentguard audit --role developer
+```
+
+---
+
+### 10. `agentguard quality-gate`
+Executes all 5 Hath0r automated quality gates (Ingestion & Sync, Priority Tier DAG & Cycle Audit, RBAC Posture Audit, Unit Test Suite, Build Package Verification).
+
+```bash
+agentguard quality-gate
+agentguard check --json
+```
+
+---
+
+### 11. `agentguard taguchi`
+Provides Taguchi Methods for Robust Design, Design of Experiments (DoE), Orthogonal Array Testing Strategies (OATS $L_4, L_8, L_9, L_{12}, L_{18}$), Signal-to-Noise Ratio (SNR) evaluation, and Quality Loss modeling.
+
+```bash
+# Generate L9 Orthogonal Array matrix mapped to factor parameters
+agentguard taguchi --array L9 --factors "temperature,pressure,time"
+
+# Calculate Signal-to-Noise Ratio (SNR) in dB for experimental response values
+agentguard taguchi --snr-values "10.0, 12.0, 8.0, 11.0" --snr-type smaller_the_better
+```
+
+---
+
+### 12. `agentguard finops`
+Manages token telemetry recording, 90-day FinOps usage analytics, statistical metrics (min, max, mean, median $p_{50}$, $p_{95}$, $p_{99}$, std dev), model cost breakdowns, and equal-width distribution histograms.
+
+```bash
+# Record an agent interaction to telemetry ledger
+agentguard finops record --prompt "Synthesize prompt" --user raybayly --model claude-3-5-sonnet
+
+# Compute 10-bin token usage distribution histogram
+agentguard finops histogram --user raybayly --bins 10
+
+# Run 90-day FinOps token telemetry audit
+agentguard finops check --user raybayly --days 90
 ```
