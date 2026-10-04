@@ -1,0 +1,148 @@
+{
+  "name": "agentguard-vscode",
+  "displayName": "AgentGuard - AI Security Guardrails and Enterprise Governance",
+  "type": "module",
+  "description": "Enterprise security guardrails, Quad-Graph cognitive substrate, deterministic RBAC tool gating, and FinOps token analytics for AI agents in VS Code.",
+  "version": "1.0.0",
+  "publisher": "BaylyAI",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Linters",
+    "Machine Learning",
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "agentguard",
+    "ai-agents",
+    "security-guardrails",
+    "governance",
+    "rbac",
+    "finops",
+    "quad-graph",
+    "mcp"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "media/agentguard.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bayly-AI/AgentGuard"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "agentguard-explorer",
+          "title": "AgentGuard Governance",
+          "icon": "media/agentguard.svg"
+        }
+      ]
+    },
+    "views": {
+      "agentguard-explorer": [
+        {
+          "id": "agentguard-planes",
+          "name": "Quad-Graph Planes"
+        },
+        {
+          "id": "agentguard-gates",
+          "name": "RBAC Security Gates"
+        },
+        {
+          "id": "agentguard-finops",
+          "name": "Token FinOps & Analytics"
+        },
+        {
+          "id": "agentguard-audit",
+          "name": "Audit & Provenance"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "agentguard.sync",
+        "title": "AgentGuard: Sync Workspace Substrate",
+        "category": "AgentGuard",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "agentguard.validate",
+        "title": "AgentGuard: Validate Quad-Graph Topology",
+        "category": "AgentGuard",
+        "icon": "$(pass)"
+      },
+      {
+        "command": "agentguard.qualityGate",
+        "title": "AgentGuard: Run Hath0r Quality Gates",
+        "category": "AgentGuard",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "agentguard.prompt",
+        "title": "AgentGuard: Synthesize Zero-Prompt-Tax System Prompt",
+        "category": "AgentGuard"
+      },
+      {
+        "command": "agentguard.finops",
+        "title": "AgentGuard: Inspect Token FinOps & ROI",
+        "category": "AgentGuard"
+      },
+      {
+        "command": "agentguard.taguchi",
+        "title": "AgentGuard: Run Taguchi Robust Design Matrix",
+        "category": "AgentGuard"
+      },
+      {
+        "command": "agentguard.visualize",
+        "title": "AgentGuard: Open Visual Quad-Graph Canvas",
+        "category": "AgentGuard",
+        "icon": "$(preview)"
+      },
+      {
+        "command": "agentguard.refresh",
+        "title": "AgentGuard: Refresh Tree Views",
+        "category": "AgentGuard",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "agentguard.refresh",
+          "when": "view == agentguard-planes || view == agentguard-gates || view == agentguard-finops",
+          "group": "navigation"
+        },
+        {
+          "command": "agentguard.visualize",
+          "when": "view == agentguard-planes",
+          "group": "navigation"
+        },
+        {
+          "command": "agentguard.sync",
+          "when": "view == agentguard-planes",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AgentGuard",
+      "properties": {
+        "agentguard.executablePath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to standalone agentguard binary or python interpreter."
+        },
+        "agentguard.autoSyncOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically synchronize Quad-Graph substrate when saving files."
+        }
+      }
+    }
+  }
+}

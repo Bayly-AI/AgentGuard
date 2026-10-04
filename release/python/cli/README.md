@@ -1,5 +1,6 @@
 # AgentGuard: Enterprise Governance Engine for Autonomous AI Agents
 
+[![VS Code Marketplace](https://img.shields.io/badge/VS%20Marketplace-AgentGuard-blue.svg)](https://marketplace.visualstudio.com/items?itemName=BaylyAI.agentguard-vscode)
 [![npm version](https://img.shields.io/npm/v/agentguard-node-plugin.svg)](https://www.npmjs.com/package/agentguard-node-plugin)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Zero Prompt Tax](https://img.shields.io/badge/token%20savings-95%25-success.svg)](#-measurable-roi--token-economics)
@@ -12,6 +13,7 @@
 
 ## 🚀 Quick Links & Downloads
 
+- 🧩 **VS Code Extension & Marketplace Release:** [`release/vscode/plugin/agentguard-vscode-1.0.0.vsix`](release/vscode/plugin/) | [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=BaylyAI.agentguard-vscode)
 - 📦 **NPM Node.js Plugin Package:** [`npm install agentguard-node-plugin`](https://www.npmjs.com/package/agentguard-node-plugin)
 - 🤖 **Claude Desktop & Claude Code MCP Integration:** [CLAUDE_MARKETPLACE.md](docs/engineering/CLAUDE_MARKETPLACE.md)
 - 🐍 **Standalone Python CLI:** [`./release/python/cli/agentguard`](release/python/cli/)
