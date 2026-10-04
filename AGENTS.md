@@ -13,6 +13,7 @@
 ## 2. Repository Standards (Tier 3: REPO_STANDARD)
 - **CR-REPO-001:** Test-Driven Development (TDD) discipline must be enforced for all logic modifications.
 - **CR-REPO-002:** All changes must build cleanly and pass linter analysis prior to completion.
+- **CR-CLI-FEATURE-STANDARD-001:** Shared features across repos live in `HATH0R-CLI`. Deliver complete feature packages with CLI commands, bots, workflows, and the documentation hexad. Declarative configurations bind locally.
 
 ## 3. Active Agent Roles
 - **Systems Architect (`role:architect`)**: System design, schema modeling, high-level planning.
