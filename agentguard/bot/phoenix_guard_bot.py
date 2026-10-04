@@ -7,12 +7,12 @@ interaction inputs and outputs, exporting OpenInference security telemetry.
 
 from __future__ import annotations
 
+import logging
 from typing import Any, Dict, List, Optional
-import structlog
 from ..telemetry.phoenix import AgentGuardPhoenixTracer, guard_tracer
 from ..audit.phoenix_evals import JailbreakEvaluationJudge, PiiRedactionJudge
 
-logger = structlog.get_logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class PhoenixGuardBot:
