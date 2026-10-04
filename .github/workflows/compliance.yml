@@ -32,6 +32,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
+      - name: Synchronize Substrate Graph
+        run: |
+          agentguard sync
+
       - name: Audit Repository Substrate Graph & Cycles
         run: |
           agentguard validate --json
