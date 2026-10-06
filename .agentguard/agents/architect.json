@@ -1,0 +1,8 @@
+{
+  "role_id": "architect",
+  "role_name": "Systems Architect Agent",
+  "scope": "root",
+  "permitted_tools": ["view_file", "search_web", "query_graph", "read_url_content", "write_to_file"],
+  "forbidden_tools": ["execute_prod_migration", "force_git_push"],
+  "parent_role_id": null
+}

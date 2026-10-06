@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cr_repo_001_tdd_discipline",
+    "title": "Test-Driven Development Standard",
+    "priority": 3,
+    "target_scope": "root",
+    "allowed_actions": ["run_unit_tests", "write_test_first"],
+    "content": "All non-trivial code modifications must be accompanied by unit tests written prior to implementation or alongside refactoring."
+  },
+  {
+    "id": "cr_repo_002_lint_and_build",
+    "title": "Clean Build & Lint Gate",
+    "priority": 3,
+    "target_scope": "root",
+    "allowed_actions": ["verify_lint", "run_build"],
+    "content": "All code edits must compile cleanly and pass static analysis checks without swallowing or suppressing linter warnings."
+  }
+]

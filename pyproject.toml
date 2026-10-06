@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentguard"
+version = "1.0.1"
+description = "Standalone Cognitive Substrate & Governance Engine for Agentic AI Systems"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+authors = [
+    {name = "Ray Bayly", email = "ray@bayly.ai"}
+]
+keywords = ["ai-agents", "governance", "rbac", "dag", "cognitive-substrate", "mcp", "zero-prompt-tax"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Governance",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.scripts]
+agentguard = "agentguard.cli:main"

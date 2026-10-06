@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "workflow_id": "security-eval-workflow",
+  "name": "AgentGuard Security & Guardrail Evaluation Workflow",
+  "version": "1.0.0",
+  "service": "agentguard",
+  "description": "Orchestrates continuous red-teaming checks and guardrail evaluations via Arize Phoenix.",
+  "evaluators": [
+    {
+      "name": "JailbreakEvaluationJudge",
+      "target": "agent_prompts",
+      "block_on_failure": true
+    },
+    {
+      "name": "PiiRedactionJudge",
+      "target": "agent_completions",
+      "block_on_failure": true
+    }
+  ],
+  "telemetry": {
+    "otlp_endpoint": "http://1NPHOENIX:4318",
+    "span_kind": "GUARDRAIL"
+  }
+}
