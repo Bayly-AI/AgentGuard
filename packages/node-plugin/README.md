@@ -1,10 +1,10 @@
-# @agentguard/node-plugin: AgentGuard Node.js Plugin & SDK
+# @bayly-ai/agentguard-node-plugin: AgentGuard Node.js Plugin & SDK
 
-[![npm version](https://img.shields.io/badge/npm-1.0.0-blue.svg)](#)
+[![npm version](https://img.shields.io/npm/v/agentguard-node-plugin.svg)](https://www.npmjs.com/package/agentguard-node-plugin)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/badge/tests-8%2F8%20passing-brightgreen.svg)](#)
+[![Build Status](https://img.shields.io/badge/tests-11%2F11%20passing-brightgreen.svg)](#)
 
-> **@agentguard/node-plugin** provides canonical Node.js and TypeScript bindings for the **AgentGuard Standalone Cognitive Substrate & Governance Control Plane**. Seamlessly integrate zero-prompt-tax prompt synthesis, pre-execution security gating, and Hath0r Quality Gates into your JavaScript and TypeScript agentic systems (LangChain JS, Vercel AI SDK, LlamaIndex TS, Fastify/Express, and Model Context Protocol servers).
+> **@bayly-ai/agentguard-node-plugin** provides canonical Node.js and TypeScript bindings for the **AgentGuard Standalone Cognitive Substrate & Governance Control Plane**. Seamlessly integrate zero-prompt-tax prompt synthesis, pre-execution security gating, and Hath0r Quality Gates into your JavaScript and TypeScript agentic systems (LangChain JS, Vercel AI SDK, LlamaIndex TS, Fastify/Express, and Model Context Protocol servers).
 
 ---
 
@@ -13,13 +13,17 @@
 ### Installation
 
 ```bash
-npm install @agentguard/node-plugin
+# Install from GitHub Packages
+npm install @bayly-ai/agentguard-node-plugin
+
+# Or install from npmjs
+npm install agentguard-node-plugin
 ```
 
 ### Basic Usage Example
 
 ```typescript
-import { AgentGuardPlugin } from "@agentguard/node-plugin";
+import { AgentGuardPlugin } from "@bayly-ai/agentguard-node-plugin";
 
 const plugin = new AgentGuardPlugin();
 

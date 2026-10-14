@@ -1,16 +1,34 @@
 {
-  "name": "agentguard-node-plugin",
-  "version": "1.0.4",
+  "name": "@bayly-ai/agentguard-node-plugin",
+  "version": "1.0.5",
   "type": "module",
   "description": "Non-bypassable enterprise governance engine and zero-prompt-tax security gate for Node.js AI agents, LangChain JS, Vercel AI SDK, and FastMCP servers.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "API_REFERENCE.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node --test test/*.test.js"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bayly-AI/AgentGuard.git"
+    "url": "git+https://github.com/Bayly-AI/AgentGuard.git"
   },
   "keywords": [
     "agentguard",
@@ -21,6 +39,6 @@
     "langchain",
     "vercel-ai"
   ],
-  "author": "Bayly AI",
+  "author": "Ray Bayly <ray@bayly.ai>",
   "license": "Apache-2.0"
 }

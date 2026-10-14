@@ -32,6 +32,7 @@ node_modules/
 # Keep release builds tracked
 !release/python/cli/
 !release/javascript/node/plugin/
+!packages/node-plugin/dist/
 
 # Hath0r runtime
 .hath0r/events.jsonl
