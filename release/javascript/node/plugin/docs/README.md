@@ -14,7 +14,7 @@
 ## 🚀 Quick Links & Downloads
 
 - 🧩 **VS Code Extension & Marketplace Release:** [`release/vscode/plugin/agentguard-vscode-1.0.0.vsix`](release/vscode/plugin/) | [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=BaylyAI.agentguard-vscode)
-- 📦 **NPM Node.js Plugin Package:** [`npm install agentguard-node-plugin`](https://www.npmjs.com/package/agentguard-node-plugin)
+- 📦 **Node.js Plugin Package:** [`npm install @bayly-ai/agentguard-node-plugin`](https://github.com/Bayly-AI/AgentGuard/pkgs/npm/agentguard-node-plugin) | [`npm install agentguard-node-plugin`](https://www.npmjs.com/package/agentguard-node-plugin)
 - 🤖 **Claude Desktop & Claude Code MCP Integration:** [CLAUDE_MARKETPLACE.md](docs/engineering/CLAUDE_MARKETPLACE.md)
 - 🐍 **Standalone Python CLI:** [`./release/python/cli/agentguard`](release/python/cli/)
 - 📖 **Technical Reference & Developer Guide:** [README.TECHNICAL.md](README.TECHNICAL.md)

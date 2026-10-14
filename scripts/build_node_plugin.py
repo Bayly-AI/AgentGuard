@@ -25,13 +25,19 @@ def build_node_package():
     for item in ["package.json", "README.md", "API_REFERENCE.md"]:
         shutil.copy2(NODE_PLUGIN_DIR / item, RELEASE_NODE_DIR / item)
 
+    if (ROOT_DIR / "LICENSE").exists():
+        shutil.copy2(ROOT_DIR / "LICENSE", RELEASE_NODE_DIR / "LICENSE")
+
     shutil.copytree(NODE_PLUGIN_DIR / "src", RELEASE_NODE_DIR / "src", dirs_exist_ok=True)
     shutil.copytree(NODE_PLUGIN_DIR / "test", RELEASE_NODE_DIR / "test", dirs_exist_ok=True)
 
     # Create dist folder
     dist_dir = RELEASE_NODE_DIR / "dist"
     dist_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copytree(NODE_PLUGIN_DIR / "src", dist_dir, dirs_exist_ok=True)
+    if (NODE_PLUGIN_DIR / "dist").exists():
+        shutil.copytree(NODE_PLUGIN_DIR / "dist", dist_dir, dirs_exist_ok=True)
+    else:
+        shutil.copytree(NODE_PLUGIN_DIR / "src", dist_dir, dirs_exist_ok=True)
 
     # Copy full documentation set into release docs/
     rel_docs_dir = RELEASE_NODE_DIR / "docs"
@@ -49,7 +55,10 @@ def build_node_package():
 
 def run_node_tests():
     print("[AgentGuard Node Build] Running Node plugin test suite in release directory...")
-    cmd = ["node", "--experimental-strip-types", "--test", "test/*.test.ts"]
+    if (RELEASE_NODE_DIR / "test" / "plugin.test.js").exists():
+        cmd = ["node", "--test", "test/plugin.test.js"]
+    else:
+        cmd = ["node", "--experimental-strip-types", "--test", "test/*.test.ts"]
     subprocess.run(cmd, cwd=RELEASE_NODE_DIR, check=True)
 
 
