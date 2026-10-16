@@ -1,7 +1,7 @@
 {
   "schema_version": "hath0r.agentgraph/1",
   "graph_id": "agentgraph-AgentGuard",
-  "timestamp": "2026-10-11T18:30:12.713955+00:00",
+  "timestamp": "2026-10-16T15:24:53.563726+00:00",
   "nodes": [
     {
       "id": "doc:agents-root",
@@ -20,7 +20,7 @@
       "plane": "knowledge",
       "type": "knowledge_doc",
       "label": "AGENTS.md (cli)",
-      "content": "# Repository Agent Policy & Governance (AGENTS.md)\n\n> **Governed by AgentGuard Quad-Graph Substrate**\n> **Scope:** Repository Root Standards & Role Definitions\n\n---\n\n## 1. System Invariants (Tier 4: ORG_INVARIANT)\n- **CR-ORG-001:** No direct git push to `main` or production release branches.\n- **CR-ORG-002:** Destructive database or bucket wipe commands are strictly prohibited.\n- **CR-ORG-003:** Secrets, private keys, and environment tokens must be masked.\n\n## 2. Repository Standards (Tier 3: REPO_STANDARD)\n- **CR-REPO-001:** Test-Driven Development (TDD) discipline must be enforced for all logic modifications.\n- **CR-REPO-002:** All changes must build cleanly and pass linter analysis prior to completion.\n\n## 3. Active Agent Roles\n- **Systems Architect (`role:architect`)**: System design, schema modeling, high-level planning.\n- **Software Engineer (`role:developer`)**: Code implementation, test creation, bug fixing.\n- **Code Reviewer (`role:reviewer`)**: Static analysis, PR evaluation,",
+      "content": "# Repository Agent Policy & Governance (AGENTS.md)\n\n> **Governed by AgentGuard Quad-Graph Substrate**\n> **Scope:** Repository Root Standards & Role Definitions\n\n---\n\n## 1. System Invariants (Tier 4: ORG_INVARIANT)\n- **CR-ORG-001:** No direct git push to `main` or production release branches.\n- **CR-ORG-002:** Destructive database or bucket wipe commands are strictly prohibited.\n- **CR-ORG-003:** Secrets, private keys, and environment tokens must be masked.\n\n## 2. Repository Standards (Tier 3: REPO_STANDARD)\n- **CR-REPO-001:** Test-Driven Development (TDD) discipline must be enforced for all logic modifications.\n- **CR-REPO-002:** All changes must build cleanly and pass linter analysis prior to completion.\n- **CR-CLI-FEATURE-STANDARD-001:** Shared features across repos live in `HATH0R-CLI`. Deliver complete feature packages with CLI commands, bots, workflows, and the documentation hexad. Declarative configurations bind locally.\n\n## 3. Active Agent Roles\n- **Systems Architect (`role:arch",
       "properties": {
         "path": "release/python/cli/AGENTS.md",
         "subsystem": "cli"
@@ -32,7 +32,7 @@
       "plane": "knowledge",
       "type": "knowledge_doc",
       "label": "AGENTS.md (docs)",
-      "content": "# Repository Agent Policy & Governance (AGENTS.md)\n\n> **Governed by AgentGuard Quad-Graph Substrate**\n> **Scope:** Repository Root Standards & Role Definitions\n\n---\n\n## 1. System Invariants (Tier 4: ORG_INVARIANT)\n- **CR-ORG-001:** No direct git push to `main` or production release branches.\n- **CR-ORG-002:** Destructive database or bucket wipe commands are strictly prohibited.\n- **CR-ORG-003:** Secrets, private keys, and environment tokens must be masked.\n\n## 2. Repository Standards (Tier 3: REPO_STANDARD)\n- **CR-REPO-001:** Test-Driven Development (TDD) discipline must be enforced for all logic modifications.\n- **CR-REPO-002:** All changes must build cleanly and pass linter analysis prior to completion.\n\n## 3. Active Agent Roles\n- **Systems Architect (`role:architect`)**: System design, schema modeling, high-level planning.\n- **Software Engineer (`role:developer`)**: Code implementation, test creation, bug fixing.\n- **Code Reviewer (`role:reviewer`)**: Static analysis, PR evaluation,",
+      "content": "# Repository Agent Policy & Governance (AGENTS.md)\n\n> **Governed by AgentGuard Quad-Graph Substrate**\n> **Scope:** Repository Root Standards & Role Definitions\n\n---\n\n## 1. System Invariants (Tier 4: ORG_INVARIANT)\n- **CR-ORG-001:** No direct git push to `main` or production release branches.\n- **CR-ORG-002:** Destructive database or bucket wipe commands are strictly prohibited.\n- **CR-ORG-003:** Secrets, private keys, and environment tokens must be masked.\n\n## 2. Repository Standards (Tier 3: REPO_STANDARD)\n- **CR-REPO-001:** Test-Driven Development (TDD) discipline must be enforced for all logic modifications.\n- **CR-REPO-002:** All changes must build cleanly and pass linter analysis prior to completion.\n- **CR-CLI-FEATURE-STANDARD-001:** Shared features across repos live in `HATH0R-CLI`. Deliver complete feature packages with CLI commands, bots, workflows, and the documentation hexad. Declarative configurations bind locally.\n\n## 3. Active Agent Roles\n- **Systems Architect (`role:arch",
       "properties": {
         "path": "release/javascript/node/plugin/docs/AGENTS.md",
         "subsystem": "docs"
@@ -48,6 +48,84 @@
       "properties": {
         "path": "release/vscode/plugin/docs/AGENTS.md",
         "subsystem": "docs"
+      },
+      "is_current": true
+    },
+    {
+      "id": "rule:cr-cli-feature-standard-001",
+      "plane": "rules",
+      "type": "rule_policy",
+      "label": "Rule CR-CLI-FEATURE-STANDARD-001",
+      "content": "Governance policy rule CR-CLI-FEATURE-STANDARD-001 referenced in AGENTS.md",
+      "properties": {
+        "rule_code": "CR-CLI-FEATURE-STANDARD-001",
+        "priority": 4,
+        "restricted_actions": []
+      },
+      "is_current": true
+    },
+    {
+      "id": "rule:cr-org-001",
+      "plane": "rules",
+      "type": "rule_policy",
+      "label": "Rule CR-ORG-001",
+      "content": "Governance policy rule CR-ORG-001 referenced in AGENTS.md",
+      "properties": {
+        "rule_code": "CR-ORG-001",
+        "priority": 4,
+        "restricted_actions": []
+      },
+      "is_current": true
+    },
+    {
+      "id": "rule:cr-org-002",
+      "plane": "rules",
+      "type": "rule_policy",
+      "label": "Rule CR-ORG-002",
+      "content": "Governance policy rule CR-ORG-002 referenced in AGENTS.md",
+      "properties": {
+        "rule_code": "CR-ORG-002",
+        "priority": 4,
+        "restricted_actions": []
+      },
+      "is_current": true
+    },
+    {
+      "id": "rule:cr-org-003",
+      "plane": "rules",
+      "type": "rule_policy",
+      "label": "Rule CR-ORG-003",
+      "content": "Governance policy rule CR-ORG-003 referenced in AGENTS.md",
+      "properties": {
+        "rule_code": "CR-ORG-003",
+        "priority": 4,
+        "restricted_actions": []
+      },
+      "is_current": true
+    },
+    {
+      "id": "rule:cr-repo-001",
+      "plane": "rules",
+      "type": "rule_policy",
+      "label": "Rule CR-REPO-001",
+      "content": "Governance policy rule CR-REPO-001 referenced in AGENTS.md",
+      "properties": {
+        "rule_code": "CR-REPO-001",
+        "priority": 4,
+        "restricted_actions": []
+      },
+      "is_current": true
+    },
+    {
+      "id": "rule:cr-repo-002",
+      "plane": "rules",
+      "type": "rule_policy",
+      "label": "Rule CR-REPO-002",
+      "content": "Governance policy rule CR-REPO-002 referenced in AGENTS.md",
+      "properties": {
+        "rule_code": "CR-REPO-002",
+        "priority": 4,
+        "restricted_actions": []
       },
       "is_current": true
     },
@@ -307,7 +385,120 @@
       "properties": {
         "path": "README.md",
         "category": "root",
-        "size_bytes": 9996
+        "size_bytes": 10115
+      },
+      "is_current": true
+    },
+    {
+      "id": "memory:rule:cr-cli-entry-001",
+      "plane": "memory",
+      "type": "rule",
+      "label": "Start with CLI Rule",
+      "content": "Always start with hath0r operator CLI before inventing ad-hoc actions.",
+      "properties": {
+        "source": "local_memory",
+        "tags": [
+          "rule",
+          "governance",
+          "cli"
+        ],
+        "importance": 1.0
+      },
+      "is_current": true
+    },
+    {
+      "id": "memory:rule:cr-bai-001",
+      "plane": "memory",
+      "type": "rule",
+      "label": "Promotion Path Policy",
+      "content": "Promotion order: local -> development -> testing -> staging -> master.",
+      "properties": {
+        "source": "local_memory",
+        "tags": [
+          "rule",
+          "governance",
+          "ci"
+        ],
+        "importance": 1.0
+      },
+      "is_current": true
+    },
+    {
+      "id": "memory:rule:cr-memory-compound-001",
+      "plane": "memory",
+      "type": "rule",
+      "label": "Mandatory MemoryGraph Compounding Rule",
+      "content": "Every project repo must maintain .hath0r/memory/graph.json and every task must compound knowledge prior to announcing complete.",
+      "properties": {
+        "source": "local_memory",
+        "tags": [
+          "rule",
+          "governance",
+          "memorygraph",
+          "cr-memory-compound-001"
+        ],
+        "importance": 1.0
+      },
+      "is_current": true
+    },
+    {
+      "id": "concept:tri-graph",
+      "plane": "memory",
+      "type": "concept",
+      "label": "Tri-Graph Substrate",
+      "content": "Three-layer cognitive graph architecture: KnowledgeGraph, ContextGraph, MemoryGraph.",
+      "properties": {
+        "source": "local_memory",
+        "tags": [
+          "architecture",
+          "substrate",
+          "tri-graph"
+        ],
+        "importance": 0.9
+      },
+      "is_current": true
+    },
+    {
+      "id": "memory:fact:repo-agentguard-orientation",
+      "plane": "memory",
+      "type": "fact",
+      "label": "AgentGuard Repository Memory Orientation",
+      "content": "AgentGuard: [![VS Code Marketplace](https://img.shields.io/badge/VS%20Marketplace-AgentGuard-blue.svg)](https://marketplace.visualstudio.com/items?itemName=BaylyAI.agentguard-vscode) [![npm version](https://img.shields.io/npm/v/agentguard-node-plugin.svg)](https://www.npmjs.com/package/agentguard-node-plugin) [![License](https://img.shields.io/badge/license-Apache%202.0",
+      "properties": {
+        "source": "local_memory",
+        "tags": [
+          "orientation",
+          "repository",
+          "agentguard",
+          "cr-memory-compound-001",
+          "fact",
+          "compounded"
+        ],
+        "importance": 0.85
+      },
+      "is_current": true
+    },
+    {
+      "id": "memory:session:sess-20261016-123220-5880ef",
+      "plane": "memory",
+      "type": "session",
+      "label": "Micro Session sess-20261016-123220-5880ef",
+      "content": "Micro Session sess-20261016-123220-5880ef [active] | Focus: Repository orientation verified for AgentGuard | Reads: 4, Writes: 5 | Entries: Compounded fact:repo-agentguard-orientation: AgentGuard Repository Memory Orientation",
+      "properties": {
+        "session_id": "sess-20261016-123220-5880ef",
+        "prior_session_id": null,
+        "parent_session_id": null,
+        "read_count": 4,
+        "write_count": 5,
+        "status": "active",
+        "byte_size": 1761,
+        "source": "local_memory",
+        "tags": [
+          "session",
+          "micro-session",
+          "active"
+        ],
+        "importance": 0.75
       },
       "is_current": true
     },
@@ -352,9 +543,118 @@
       "is_current": true
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "source": "memory:rule:cr-cli-entry-001",
+      "target": "concept:tri-graph",
+      "relation": "ENFORCES",
+      "is_current": true
+    },
+    {
+      "source": "memory:rule:cr-memory-compound-001",
+      "target": "concept:tri-graph",
+      "relation": "ENFORCES",
+      "is_current": true
+    },
+    {
+      "source": "memory:fact:repo-agentguard-orientation",
+      "target": "concept:tri-graph",
+      "relation": "RELATES_TO",
+      "is_current": true
+    },
+    {
+      "source": "memory:fact:repo-agentguard-orientation",
+      "target": "memory:rule:cr-memory-compound-001",
+      "relation": "RELATES_TO",
+      "is_current": true
+    },
+    {
+      "source": "memory:session:sess-20261016-123220-5880ef",
+      "target": "concept:tri-graph",
+      "relation": "RELATES_TO",
+      "is_current": true
+    },
+    {
+      "source": "memory:fact:repo-agentguard-orientation",
+      "target": "memory:session:sess-20261016-123220-5880ef",
+      "relation": "DERIVES_FROM",
+      "is_current": true
+    },
+    {
+      "source": "rule:cr-cli-feature-standard-001",
+      "target": "role:developer",
+      "relation": "GOVERNS",
+      "is_current": true
+    },
+    {
+      "source": "rule:cr-org-001",
+      "target": "role:developer",
+      "relation": "GOVERNS",
+      "is_current": true
+    },
+    {
+      "source": "rule:cr-org-002",
+      "target": "role:developer",
+      "relation": "GOVERNS",
+      "is_current": true
+    },
+    {
+      "source": "rule:cr-org-003",
+      "target": "role:developer",
+      "relation": "GOVERNS",
+      "is_current": true
+    },
+    {
+      "source": "rule:cr-repo-001",
+      "target": "role:developer",
+      "relation": "GOVERNS",
+      "is_current": true
+    },
+    {
+      "source": "rule:cr-repo-002",
+      "target": "role:developer",
+      "relation": "GOVERNS",
+      "is_current": true
+    },
+    {
+      "source": "memory:rule:cr-cli-entry-001",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    },
+    {
+      "source": "memory:rule:cr-bai-001",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    },
+    {
+      "source": "memory:rule:cr-memory-compound-001",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    },
+    {
+      "source": "concept:tri-graph",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    },
+    {
+      "source": "memory:fact:repo-agentguard-orientation",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    },
+    {
+      "source": "memory:session:sess-20261016-123220-5880ef",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    }
+  ],
   "metadata": {
     "repo_root": "/Users/raybayly/Development/OpenSource/AgentGuard",
-    "synced_sources": 24
+    "synced_sources": 25
   }
 }

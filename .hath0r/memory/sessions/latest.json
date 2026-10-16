@@ -1,0 +1,51 @@
+{
+  "schema_version": "hath0r.micro_session/1",
+  "session_id": "sess-20261016-123220-5880ef",
+  "prior_session_id": null,
+  "parent_session_id": null,
+  "task_id": null,
+  "role": null,
+  "repo_name": "AgentGuard",
+  "status": "active",
+  "started_at": "2026-10-16T12:32:20.164931+00:00",
+  "updated_at": "2026-10-16T15:24:53.566404+00:00",
+  "ended_at": null,
+  "read_count": 5,
+  "write_count": 5,
+  "last_read_at": "2026-10-16T15:24:53.566404+00:00",
+  "last_write_at": "2026-10-16T15:24:53.446194+00:00",
+  "active_focus": "Repository orientation verified for AgentGuard",
+  "prior_summary": "ounded fact:repo-agentguard-orientat; Compounded fact:repo-agentguard-orientat; Compounded fact:repo-agentguard-orientat",
+  "recalled_nodes": [
+    {
+      "id": "fact:repo-agentguard-orientation",
+      "type": "fact",
+      "label": "AgentGuard Repository Memory Orientation",
+      "snippet": "AgentGuard: [![VS Code Marketplace](https://img.shields.io/badge/VS%20Marketplace-AgentGua"
+    }
+  ],
+  "micro_entries": [
+    {
+      "timestamp": "2026-10-16T15:24:53.446194+00:00",
+      "kind": "compound",
+      "summary": "Compounded fact:repo-agentguard-orientation: AgentGuard Repository Memory Orientation",
+      "tags": [
+        "orientation",
+        "repository",
+        "agentguard",
+        "cr-memory-compound-001",
+        "fact",
+        "compounded"
+      ],
+      "node_id": "fact:repo-agentguard-orientation"
+    }
+  ],
+  "next_steps": [],
+  "compounded_node_ids": [
+    "fact:repo-agentguard-orientation"
+  ],
+  "capsule_bytes": 1761,
+  "revision": 6,
+  "base_graph_hash": "sha256:9f1e2689096a862ad3400eebe3d4c520bdebf3df1bfc6cb90b49012d00342bb2",
+  "content_hash": "sha256:d588dacfec7cc1fd3647229a78bd1296714eb0cf42ffea2649b71235239385d7"
+}
