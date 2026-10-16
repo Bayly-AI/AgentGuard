@@ -6,14 +6,14 @@
   "task_id": null,
   "role": null,
   "repo_name": "AgentGuard",
-  "status": "active",
+  "status": "completed",
   "started_at": "2026-10-16T12:32:20.164931+00:00",
-  "updated_at": "2026-10-16T15:24:53.566404+00:00",
-  "ended_at": null,
-  "read_count": 5,
-  "write_count": 5,
-  "last_read_at": "2026-10-16T15:24:53.566404+00:00",
-  "last_write_at": "2026-10-16T15:24:53.446194+00:00",
+  "updated_at": "2026-10-16T15:48:07.782738+00:00",
+  "ended_at": "2026-10-16T15:48:07.782738+00:00",
+  "read_count": 6,
+  "write_count": 7,
+  "last_read_at": "2026-10-16T15:48:07.740859+00:00",
+  "last_write_at": "2026-10-16T15:48:07.782738+00:00",
   "active_focus": "Repository orientation verified for AgentGuard",
   "prior_summary": "ounded fact:repo-agentguard-orientat; Compounded fact:repo-agentguard-orientat; Compounded fact:repo-agentguard-orientat",
   "recalled_nodes": [
@@ -26,26 +26,35 @@
   ],
   "micro_entries": [
     {
-      "timestamp": "2026-10-16T15:24:53.446194+00:00",
+      "timestamp": "2026-10-16T15:48:07.763981+00:00",
       "kind": "compound",
-      "summary": "Compounded fact:repo-agentguard-orientation: AgentGuard Repository Memory Orientation",
+      "summary": "Compounded episode:clean-repo-agentguard: Clean Repo Lifecycle (AgentGuard)",
       "tags": [
-        "orientation",
-        "repository",
+        "clean-repo",
+        "hygiene",
         "agentguard",
-        "cr-memory-compound-001",
-        "fact",
+        "episode",
         "compounded"
       ],
-      "node_id": "fact:repo-agentguard-orientation"
+      "node_id": "episode:clean-repo-agentguard"
+    },
+    {
+      "timestamp": "2026-10-16T15:48:07.782738+00:00",
+      "kind": "milestone",
+      "summary": "Clean Repo Lifecycle completed for AgentGuard.",
+      "tags": [
+        "session-end"
+      ],
+      "node_id": null
     }
   ],
   "next_steps": [],
   "compounded_node_ids": [
-    "fact:repo-agentguard-orientation"
+    "fact:repo-agentguard-orientation",
+    "episode:clean-repo-agentguard"
   ],
-  "capsule_bytes": 1761,
-  "revision": 6,
-  "base_graph_hash": "sha256:9f1e2689096a862ad3400eebe3d4c520bdebf3df1bfc6cb90b49012d00342bb2",
-  "content_hash": "sha256:d588dacfec7cc1fd3647229a78bd1296714eb0cf42ffea2649b71235239385d7"
+  "capsule_bytes": 2014,
+  "revision": 9,
+  "base_graph_hash": "sha256:ec933e05f508e9e240fd21393e06f65344e536e722494b90f072625aea1a5486",
+  "content_hash": "sha256:8e061747bd1366032525580fe89ea95d74c9e5511cf0674369937fb4eec2948a"
 }

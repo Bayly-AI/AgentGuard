@@ -1,7 +1,7 @@
 {
   "schema_version": "hath0r.agentgraph/1",
   "graph_id": "agentgraph-AgentGuard",
-  "timestamp": "2026-10-16T15:24:53.563726+00:00",
+  "timestamp": "2026-10-16T15:48:07.869495+00:00",
   "nodes": [
     {
       "id": "doc:agents-root",
@@ -479,24 +479,63 @@
       "is_current": true
     },
     {
+      "id": "memory:episode:clean-repo-agentguard",
+      "plane": "memory",
+      "type": "episode",
+      "label": "Clean Repo Lifecycle (AgentGuard)",
+      "content": "Executed 13-step clean-repo hygiene and knowledge sync for AgentGuard.",
+      "properties": {
+        "source": "local_memory",
+        "tags": [
+          "clean-repo",
+          "hygiene",
+          "agentguard",
+          "episode",
+          "compounded"
+        ],
+        "importance": 0.75
+      },
+      "is_current": true
+    },
+    {
+      "id": "memory:insight:agentguard",
+      "plane": "memory",
+      "type": "insight",
+      "label": "Synthesized Insight on agentguard",
+      "content": "Consolidated from 2 memory nodes tagged 'agentguard'. Recurring themes: agentguard, https, shields, marketplace. Latest context: Executed 13-step clean-repo hygiene and knowledge sync for AgentGuard.",
+      "properties": {
+        "constituent_count": 2,
+        "source_tag": "agentguard",
+        "source": "local_memory",
+        "tags": [
+          "agentguard",
+          "insight",
+          "reflection",
+          "compounded"
+        ],
+        "importance": 0.95
+      },
+      "is_current": true
+    },
+    {
       "id": "memory:session:sess-20261016-123220-5880ef",
       "plane": "memory",
       "type": "session",
       "label": "Micro Session sess-20261016-123220-5880ef",
-      "content": "Micro Session sess-20261016-123220-5880ef [active] | Focus: Repository orientation verified for AgentGuard | Reads: 4, Writes: 5 | Entries: Compounded fact:repo-agentguard-orientation: AgentGuard Repository Memory Orientation",
+      "content": "Micro Session sess-20261016-123220-5880ef [completed] | Focus: Repository orientation verified for AgentGuard | Reads: 6, Writes: 7 | Entries: Compounded episode:clean-repo-agentguard: Clean Repo Lifecycle (AgentGuard); Clean Repo Lifecycle completed for AgentGuard.",
       "properties": {
         "session_id": "sess-20261016-123220-5880ef",
         "prior_session_id": null,
         "parent_session_id": null,
-        "read_count": 4,
-        "write_count": 5,
-        "status": "active",
-        "byte_size": 1761,
+        "read_count": 6,
+        "write_count": 7,
+        "status": "completed",
+        "byte_size": 2014,
         "source": "local_memory",
         "tags": [
           "session",
           "micro-session",
-          "active"
+          "completed"
         ],
         "importance": 0.75
       },
@@ -581,6 +620,36 @@
       "is_current": true
     },
     {
+      "source": "memory:episode:clean-repo-agentguard",
+      "target": "concept:tri-graph",
+      "relation": "DERIVES_FROM",
+      "is_current": true
+    },
+    {
+      "source": "memory:episode:clean-repo-agentguard",
+      "target": "memory:rule:cr-memory-compound-001",
+      "relation": "DERIVES_FROM",
+      "is_current": true
+    },
+    {
+      "source": "memory:episode:clean-repo-agentguard",
+      "target": "memory:session:sess-20261016-123220-5880ef",
+      "relation": "DERIVES_FROM",
+      "is_current": true
+    },
+    {
+      "source": "memory:insight:agentguard",
+      "target": "memory:fact:repo-agentguard-orientation",
+      "relation": "DERIVES_FROM",
+      "is_current": true
+    },
+    {
+      "source": "memory:insight:agentguard",
+      "target": "memory:episode:clean-repo-agentguard",
+      "relation": "DERIVES_FROM",
+      "is_current": true
+    },
+    {
       "source": "rule:cr-cli-feature-standard-001",
       "target": "role:developer",
       "relation": "GOVERNS",
@@ -642,6 +711,18 @@
     },
     {
       "source": "memory:fact:repo-agentguard-orientation",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    },
+    {
+      "source": "memory:episode:clean-repo-agentguard",
+      "target": "role:developer",
+      "relation": "INFORMS",
+      "is_current": true
+    },
+    {
+      "source": "memory:insight:agentguard",
       "target": "role:developer",
       "relation": "INFORMS",
       "is_current": true
