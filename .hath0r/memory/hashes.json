@@ -1,63 +1,63 @@
 {
   "schema_version": "hath0r.memory_hashes/1",
   "repo_name": "AgentGuard",
-  "revision": 69,
-  "updated_at": "2026-10-28T17:45:17.263353+00:00",
+  "revision": 79,
+  "updated_at": "2026-10-28T18:13:01.002256+00:00",
   "files": {
     ".hath0r/memory/architecture.md": {
       "sha256": "sha256:ff6a9063acefb8f5f75d38ef8caffb9ba8315f6ffe1ecf72138e6c68ffcb1084",
       "content_hash": "sha256:ff6a9063acefb8f5f75d38ef8caffb9ba8315f6ffe1ecf72138e6c68ffcb1084",
       "revision": 1,
       "byte_size": 246,
-      "updated_at": "2026-10-28T17:45:17.263353+00:00"
+      "updated_at": "2026-10-28T18:13:01.002256+00:00"
     },
     ".hath0r/memory/core_rules.md": {
       "sha256": "sha256:e01682a066fd070ee204dc0432db2b2c080b78d961f023dd847f2df258dda2eb",
       "content_hash": "sha256:e01682a066fd070ee204dc0432db2b2c080b78d961f023dd847f2df258dda2eb",
       "revision": 3,
       "byte_size": 774,
-      "updated_at": "2026-10-28T17:45:17.263353+00:00"
+      "updated_at": "2026-10-28T18:13:01.002256+00:00"
     },
     ".hath0r/memory/graph.json": {
-      "sha256": "sha256:db3e882ad39186f060b0a8e62777c44de02e4abab99a0edfe50c688d57b10346",
-      "content_hash": "sha256:0140d6d0b59e3f7d6f396776260b36d5662b3ab86546a52a0927a0aa16db67c5",
-      "revision": 50,
-      "byte_size": 13315,
-      "updated_at": "2026-10-28T17:45:17.263353+00:00"
+      "sha256": "sha256:faa4b4c39b1ae98893fbc40d2119247b978fa650af73aa3f6fa19c586832eb08",
+      "content_hash": "sha256:81990dcfb9188c218c413d4860989476e0c9604250cb62a09b65d588847de611",
+      "revision": 58,
+      "byte_size": 13304,
+      "updated_at": "2026-10-28T18:13:01.002256+00:00"
     },
     ".hath0r/memory/sessions/current.json": {
-      "sha256": "sha256:8b34ed48b8e7a3ea9f1cee259ad06e77c3d6f0b436594c3fee3df8a492beaad3",
-      "content_hash": "sha256:751862b2439b29d39ad213a9d605ea1d48216d12a470ac4884b9444ecce58ded",
-      "revision": 21,
-      "byte_size": 1928,
-      "updated_at": "2026-10-28T17:45:17.263353+00:00"
+      "sha256": "sha256:f5d9541a2a9b289dbbdaa01e10493d6ba6ea41003b3decfc165223c0c929fc5b",
+      "content_hash": "sha256:001575426a707c3844398b16cf2b16283e9dac612348eb2e83ecaf17206448ac",
+      "revision": 24,
+      "byte_size": 1892,
+      "updated_at": "2026-10-28T18:13:01.002256+00:00"
     },
     ".hath0r/memory/sessions/latest.json": {
-      "sha256": "sha256:8b34ed48b8e7a3ea9f1cee259ad06e77c3d6f0b436594c3fee3df8a492beaad3",
-      "content_hash": "sha256:751862b2439b29d39ad213a9d605ea1d48216d12a470ac4884b9444ecce58ded",
-      "revision": 21,
-      "byte_size": 1928,
-      "updated_at": "2026-10-28T17:45:17.263353+00:00"
+      "sha256": "sha256:f5d9541a2a9b289dbbdaa01e10493d6ba6ea41003b3decfc165223c0c929fc5b",
+      "content_hash": "sha256:001575426a707c3844398b16cf2b16283e9dac612348eb2e83ecaf17206448ac",
+      "revision": 24,
+      "byte_size": 1892,
+      "updated_at": "2026-10-28T18:13:01.002256+00:00"
     },
     ".hath0r/memory/sessions/sess-20261016-123220-5880ef.json": {
-      "sha256": "sha256:8b34ed48b8e7a3ea9f1cee259ad06e77c3d6f0b436594c3fee3df8a492beaad3",
-      "content_hash": "sha256:751862b2439b29d39ad213a9d605ea1d48216d12a470ac4884b9444ecce58ded",
-      "revision": 21,
-      "byte_size": 1928,
-      "updated_at": "2026-10-28T17:45:17.263353+00:00"
+      "sha256": "sha256:f5d9541a2a9b289dbbdaa01e10493d6ba6ea41003b3decfc165223c0c929fc5b",
+      "content_hash": "sha256:001575426a707c3844398b16cf2b16283e9dac612348eb2e83ecaf17206448ac",
+      "revision": 24,
+      "byte_size": 1892,
+      "updated_at": "2026-10-28T18:13:01.002256+00:00"
     }
   },
   "source_files": {
     ".hath0r/evals/latest.json": {
-      "sha256": "sha256:27806ff7ba7f3d99ce7474100c4de278742ee3682bd1e813db37fe1e262dda43",
-      "revision": 3,
-      "byte_size": 2631,
+      "sha256": "sha256:982c719fd26ab779e827064fc02b3f107d4c0c736c940ce5b9e3036220d14ae8",
+      "revision": 4,
+      "byte_size": 2625,
       "exists": true,
       "referenced_by": [
         "eval:clean-repo-agentguard",
         "eval:eval-baseline-agentguard"
       ],
-      "updated_at": "2026-10-28T17:45:17.263353+00:00"
+      "updated_at": "2026-10-28T18:13:01.002256+00:00"
     }
   }
 }

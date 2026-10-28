@@ -8,35 +8,35 @@
   "repo_name": "AgentGuard",
   "status": "completed",
   "started_at": "2026-10-16T12:32:20.164931+00:00",
-  "updated_at": "2026-10-28T17:45:17.198234+00:00",
+  "updated_at": "2026-10-28T18:13:00.901921+00:00",
   "ended_at": "2026-10-28T15:20:14.417268+00:00",
-  "read_count": 10,
-  "write_count": 15,
-  "last_read_at": "2026-10-28T17:45:16.841193+00:00",
-  "last_write_at": "2026-10-28T17:45:17.198234+00:00",
+  "read_count": 11,
+  "write_count": 17,
+  "last_read_at": "2026-10-28T18:13:00.300490+00:00",
+  "last_write_at": "2026-10-28T18:13:00.901921+00:00",
   "active_focus": "Provisioning CR-TASK-EVAL-001 for AgentGuard",
-  "prior_summary": "ounded eval:clean-repo-agentguard: T; Compounded rule:cr-task-eval-001: Automa; Compounded rule:cr-task-eval-001: Automa",
+  "prior_summary": "ounded rule:cr-task-eval-001: Automa; Compounded eval:eval-baseline-agentguard; Compounded episode:clean-repo-agentguard",
   "recalled_nodes": [
     {
-      "id": "eval:clean-repo-agentguard",
-      "type": "eval",
-      "label": "Task Evaluation clean-repo-agentguard (R=1.00, PASS)",
-      "snippet": "4-Tier Task Evaluation for clean-repo-agentguard on branch development: R_task=1.0000 (det"
+      "id": "insight:agentguard",
+      "type": "insight",
+      "label": "Synthesized Insight on agentguard",
+      "snippet": "Consolidated from 2 memory nodes tagged 'agentguard'. Recurring themes: agentguard, https,"
     }
   ],
   "micro_entries": [
     {
-      "timestamp": "2026-10-28T17:45:17.198234+00:00",
+      "timestamp": "2026-10-28T18:13:00.901921+00:00",
       "kind": "compound",
-      "summary": "Compounded eval:eval-baseline-agentguard: Task Evaluation eval-baseline-agentguard (R=1.00, PASS)",
+      "summary": "Compounded eval:clean-repo-agentguard: Task Evaluation clean-repo-agentguard (R=1.00, PASS)",
       "tags": [
         "eval",
         "cr-task-eval-001",
-        "eval-baseline-agentguard",
+        "clean-repo-agentguard",
         "passed",
         "compounded"
       ],
-      "node_id": "eval:eval-baseline-agentguard"
+      "node_id": "eval:clean-repo-agentguard"
     }
   ],
   "next_steps": [],
@@ -47,8 +47,8 @@
     "eval:eval-baseline-agentguard",
     "eval:clean-repo-agentguard"
   ],
-  "capsule_bytes": 1928,
-  "revision": 21,
-  "base_graph_hash": "sha256:ef58fc42bdcc547012161091c7d698c9ab864d669442d6048a3d88ff15e4e7a5",
-  "content_hash": "sha256:751862b2439b29d39ad213a9d605ea1d48216d12a470ac4884b9444ecce58ded"
+  "capsule_bytes": 1892,
+  "revision": 24,
+  "base_graph_hash": "sha256:0140d6d0b59e3f7d6f396776260b36d5662b3ab86546a52a0927a0aa16db67c5",
+  "content_hash": "sha256:001575426a707c3844398b16cf2b16283e9dac612348eb2e83ecaf17206448ac"
 }

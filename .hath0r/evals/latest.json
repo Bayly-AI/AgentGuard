@@ -1,13 +1,13 @@
 {
   "schema_version": "hath0r.evals.scorecard/v1",
   "rule_id": "CR-TASK-EVAL-001",
-  "eval_id": "eval-20261028-174516-dd9db8",
-  "task_id": "eval-baseline-agentguard",
+  "eval_id": "eval-20261028-181300-cfb61c",
+  "task_id": "clean-repo-agentguard",
   "issue_number": null,
   "repo_name": "AgentGuard",
   "branch": "development",
-  "evaluated_at": "2026-10-28T17:45:16.991089+00:00",
-  "duration_ms": 224.82,
+  "evaluated_at": "2026-10-28T18:13:00.514368+00:00",
+  "duration_ms": 418.94,
   "passed_gate": true,
   "r_task": 1.0,
   "min_reward_threshold": 0.8,
@@ -64,13 +64,13 @@
       "estimated_usd": 0.0,
       "max_usd": 0.25,
       "session_id": "sess-20261016-123220-5880ef",
-      "session_reads": 10,
-      "session_writes": 14,
-      "session_bytes": 1932,
+      "session_reads": 11,
+      "session_writes": 16,
+      "session_bytes": 1877,
       "within_capsule_budget": true,
-      "latency_ms": 71.11,
-      "taguchi_quality_loss": 0.0001,
-      "snr_db": 28.98
+      "latency_ms": 125.5,
+      "taguchi_quality_loss": 0.0002,
+      "snr_db": 24.05
     },
     "adversarial": {
       "score": 1.0,
@@ -85,7 +85,7 @@
     "goal_alignment": {
       "score": 1.0,
       "passed": true,
-      "task_id": "eval-baseline-agentguard",
+      "task_id": "clean-repo-agentguard",
       "issue_number": null,
       "active_focus": "Provisioning CR-TASK-EVAL-001 for AgentGuard",
       "compounded_nodes_count": 6,
@@ -96,5 +96,5 @@
   "observability_sync": {
     "mode": "pending"
   },
-  "content_hash": "sha256:768733cb5c47712b88acbbc85696ff8810c453f07997944c92510400319a7815"
+  "content_hash": "sha256:1405844d695d2ead082fd5ea9bf578111a76ea11fb96254ed2c64a6167c6bf6a"
 }
