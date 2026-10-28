@@ -1,13 +1,13 @@
 {
   "schema_version": "hath0r.evals.scorecard/v1",
   "rule_id": "CR-TASK-EVAL-001",
-  "eval_id": "eval-20261028-142110-594ffd",
-  "task_id": "eval-baseline-agentguard",
+  "eval_id": "eval-20261028-152014-37b4c4",
+  "task_id": "clean-repo-agentguard",
   "issue_number": null,
   "repo_name": "AgentGuard",
   "branch": "development",
-  "evaluated_at": "2026-10-28T14:21:10.915865+00:00",
-  "duration_ms": 192.23,
+  "evaluated_at": "2026-10-28T15:20:14.943601+00:00",
+  "duration_ms": 245.55,
   "passed_gate": true,
   "r_task": 1.0,
   "min_reward_threshold": 0.8,
@@ -42,7 +42,7 @@
         },
         "memory_compounded": {
           "passed": true,
-          "compounded_nodes_count": 4,
+          "compounded_nodes_count": 5,
           "session_read_verified": true,
           "session_write_verified": true,
           "hashes_verified": true,
@@ -64,13 +64,13 @@
       "estimated_usd": 0.0,
       "max_usd": 0.25,
       "session_id": "sess-20261016-123220-5880ef",
-      "session_reads": 7,
-      "session_writes": 8,
-      "session_bytes": 2043,
+      "session_reads": 8,
+      "session_writes": 11,
+      "session_bytes": 1695,
       "within_capsule_budget": true,
-      "latency_ms": 72.17,
+      "latency_ms": 83.68,
       "taguchi_quality_loss": 0.0001,
-      "snr_db": 28.85
+      "snr_db": 27.57
     },
     "adversarial": {
       "score": 1.0,
@@ -85,10 +85,10 @@
     "goal_alignment": {
       "score": 1.0,
       "passed": true,
-      "task_id": "eval-baseline-agentguard",
+      "task_id": "clean-repo-agentguard",
       "issue_number": null,
       "active_focus": "Provisioning CR-TASK-EVAL-001 for AgentGuard",
-      "compounded_nodes_count": 4,
+      "compounded_nodes_count": 5,
       "consensus_score": 1.0
     }
   },
@@ -96,5 +96,5 @@
   "observability_sync": {
     "mode": "pending"
   },
-  "content_hash": "sha256:b8882ca7122e3398cba6d365095c2254d5cb04890474457664f6011393455790"
+  "content_hash": "sha256:adbe6bc158a9318a64347decc6b960f9b50860d8eb67db85d11434d71b16a3c8"
 }
