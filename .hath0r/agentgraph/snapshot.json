@@ -1,7 +1,7 @@
 {
   "schema_version": "hath0r.agentgraph/1",
   "graph_id": "agentgraph-AgentGuard",
-  "timestamp": "2026-10-28T17:36:28.327470+00:00",
+  "timestamp": "2026-10-28T17:45:17.256543+00:00",
   "nodes": [
     {
       "id": "doc:agents-root",
@@ -584,7 +584,7 @@
       "content": "4-Tier Task Evaluation for eval-baseline-agentguard on branch development: R_task=1.0000 (det=1.00, traj=1.00, adv=1.00, goal=1.00). Gate=PASSED.",
       "properties": {
         "source_files": {
-          ".hath0r/evals/latest.json": "sha256:e5881e24f7fa2f0bf329b5b62cfc4bac5bae27a5d60bb6774c82c60fdcfefe48"
+          ".hath0r/evals/latest.json": "sha256:27806ff7ba7f3d99ce7474100c4de278742ee3682bd1e813db37fe1e262dda43"
         },
         "source": "local_memory",
         "tags": [
@@ -625,15 +625,15 @@
       "plane": "memory",
       "type": "session",
       "label": "Micro Session sess-20261016-123220-5880ef",
-      "content": "Micro Session sess-20261016-123220-5880ef [completed] | Focus: Provisioning CR-TASK-EVAL-001 for AgentGuard | Reads: 9, Writes: 13 | Entries: Compounded rule:cr-task-eval-001: Automatic Task Evaluation & Scorecard Summary Gate (CR-TASK-EVAL-001)",
+      "content": "Micro Session sess-20261016-123220-5880ef [completed] | Focus: Provisioning CR-TASK-EVAL-001 for AgentGuard | Reads: 10, Writes: 15 | Entries: Compounded eval:eval-baseline-agentguard: Task Evaluation eval-baseline-agentguard (R=1.00, PASS)",
       "properties": {
         "session_id": "sess-20261016-123220-5880ef",
         "prior_session_id": null,
         "parent_session_id": null,
-        "read_count": 9,
-        "write_count": 13,
+        "read_count": 10,
+        "write_count": 15,
         "status": "completed",
-        "byte_size": 1931,
+        "byte_size": 1928,
         "source": "local_memory",
         "tags": [
           "session",
