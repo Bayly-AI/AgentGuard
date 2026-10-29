@@ -3,55 +3,50 @@
   "session_id": "sess-20261029-134350-585bf4",
   "prior_session_id": "sess-20261016-123220-5880ef",
   "parent_session_id": "sess-20261016-123220-5880ef",
-  "revision": 3,
-  "content_hash": "sha256:bb4c38251c56cb6f2b31af1caefb8eeafb39b840b5dcd82b6b019319620883e0",
-  "base_graph_hash": "sha256:81990dcfb9188c218c413d4860989476e0c9604250cb62a09b65d588847de611",
+  "revision": 9,
+  "content_hash": "sha256:870b12dd8985e3c0f056e2f1f0b45603dc24b432c65d88428dfd9ca21e54a9d6",
+  "base_graph_hash": "sha256:70cd63bee636ad315ed298efd73fe9576d6eba935ade13498c723104e4f26e6b",
   "task_id": "rule-sync-and-workflow-upgrade",
   "role": null,
   "repo_name": "AgentGuard",
   "status": "active",
   "started_at": "2026-10-29T13:43:50.266991+00:00",
-  "updated_at": "2026-10-29T13:43:52.754540+00:00",
+  "updated_at": "2026-10-29T13:58:50.159302+00:00",
   "ended_at": null,
-  "read_count": 1,
-  "write_count": 2,
-  "last_read_at": "2026-10-29T13:43:50.266991+00:00",
-  "last_write_at": "2026-10-29T13:43:52.754540+00:00",
-  "active_focus": "Active working session in AgentGuard",
-  "prior_summary": "Compounded eval:clean-repo-agentguard: Task Evaluation clean-repo-agentguard (R=1.00, PASS)",
+  "read_count": 3,
+  "write_count": 6,
+  "last_read_at": "2026-10-29T13:58:49.807664+00:00",
+  "last_write_at": "2026-10-29T13:58:50.159302+00:00",
+  "active_focus": "Provisioning CR-TASK-EVAL-001 for AgentGuard",
+  "prior_summary": "ounded rule:cr-task-eval-001: Automa; Compounded eval:eval-baseline-agentguard; Compounded rule:cr-task-eval-001: Automa",
   "recalled_nodes": [
     {
-      "id": "rule:cr-task-eval-001",
-      "type": "rule",
-      "label": "Automatic Task Evaluation & Scorecard Summary Gate (CR-TASK-",
-      "snippet": "Every task must execute and pass the 4-tier hybrid evaluation pipeline (R_task >= 0.80), p"
+      "id": "eval:eval-baseline-agentguard",
+      "type": "eval",
+      "label": "Task Evaluation eval-baseline-agentguard (R=1.00, PASS)",
+      "snippet": "4-Tier Task Evaluation for eval-baseline-agentguard on branch development: R_task=1.0000 ("
     }
   ],
   "micro_entries": [
     {
-      "timestamp": "2026-10-29T13:43:50.920539+00:00",
-      "kind": "observation",
-      "summary": "Harmonized rules, synced CLAUDE.md 1:1 with AGENTS.md (CR-CLAUDE-SYNC-001), initialized THREATMODEL.md, and upgraded workflows.",
-      "tags": [],
-      "node_id": null
-    },
-    {
-      "timestamp": "2026-10-29T13:43:52.754540+00:00",
+      "timestamp": "2026-10-29T13:58:50.159302+00:00",
       "kind": "compound",
-      "summary": "Compounded eval:task-AgentGuard: Task Evaluation task-AgentGuard (R=1.00, PASS)",
+      "summary": "Compounded eval:eval-baseline-agentguard: Task Evaluation eval-baseline-agentguard (R=1.00, PASS)",
       "tags": [
         "eval",
         "cr-task-eval-001",
-        "task-agentguard",
+        "eval-baseline-agentguard",
         "passed",
         "compounded"
       ],
-      "node_id": "eval:task-AgentGuard"
+      "node_id": "eval:eval-baseline-agentguard"
     }
   ],
   "next_steps": [],
   "compounded_node_ids": [
-    "eval:task-AgentGuard"
+    "eval:task-AgentGuard",
+    "rule:cr-task-eval-001",
+    "eval:eval-baseline-agentguard"
   ],
-  "capsule_bytes": 2036
+  "capsule_bytes": 1893
 }
