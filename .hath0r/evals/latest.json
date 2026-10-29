@@ -1,13 +1,13 @@
 {
   "schema_version": "hath0r.evals.scorecard/v1",
   "rule_id": "CR-TASK-EVAL-001",
-  "eval_id": "eval-20261028-181300-cfb61c",
-  "task_id": "clean-repo-agentguard",
+  "eval_id": "eval-20261029-134352-32e67b",
+  "task_id": "task-AgentGuard",
   "issue_number": null,
   "repo_name": "AgentGuard",
   "branch": "development",
-  "evaluated_at": "2026-10-28T18:13:00.514368+00:00",
-  "duration_ms": 418.94,
+  "evaluated_at": "2026-10-29T13:43:52.321112+00:00",
+  "duration_ms": 206.05,
   "passed_gate": true,
   "r_task": 1.0,
   "min_reward_threshold": 0.8,
@@ -32,7 +32,7 @@
       "checks": {
         "version_valid": {
           "passed": true,
-          "version": "1.0.2",
+          "version": "1.0.3",
           "error": null
         },
         "agentgraph_valid": {
@@ -63,14 +63,14 @@
       "max_tokens": 50000,
       "estimated_usd": 0.0,
       "max_usd": 0.25,
-      "session_id": "sess-20261016-123220-5880ef",
-      "session_reads": 11,
-      "session_writes": 16,
-      "session_bytes": 1877,
+      "session_id": "sess-20261029-134350-585bf4",
+      "session_reads": 1,
+      "session_writes": 1,
+      "session_bytes": 1871,
       "within_capsule_budget": true,
-      "latency_ms": 125.5,
-      "taguchi_quality_loss": 0.0002,
-      "snr_db": 24.05
+      "latency_ms": 76.98,
+      "taguchi_quality_loss": 0.0001,
+      "snr_db": 28.29
     },
     "adversarial": {
       "score": 1.0,
@@ -85,16 +85,50 @@
     "goal_alignment": {
       "score": 1.0,
       "passed": true,
-      "task_id": "clean-repo-agentguard",
+      "task_id": "task-AgentGuard",
       "issue_number": null,
-      "active_focus": "Provisioning CR-TASK-EVAL-001 for AgentGuard",
+      "active_focus": "Active working session in AgentGuard",
       "compounded_nodes_count": 6,
       "consensus_score": 1.0
     }
   },
+  "evidence_trust_report": {
+    "schema": "hath0r.security.evidence_trust_report/1",
+    "tiers": {
+      "VERIFIED_EXECUTION": [
+        ".hath0r/evals/latest.json"
+      ],
+      "STATIC_AST_ANALYSIS": [
+        ".hath0r/agentgraph/snapshot.json",
+        ".hath0r/memory/graph.json",
+        ".hath0r/memory/hashes.json",
+        ".hath0r/memory/sessions/current.json",
+        ".hath0r/memory/sessions/latest.json",
+        "AGENTS.md",
+        "CHANGELOG.md",
+        "pyproject.toml",
+        ".hath0r/memory/sessions/sess-20261029-134350-585bf4.json",
+        "CLAUDE.md",
+        "THREATMODEL.md"
+      ],
+      "UNVERIFIED_FILE_PRESENCE": [
+        "VERSION",
+        ".agents/",
+        ".hath0r/agentgraph/snapshot.ttl",
+        ".hath0r/security/"
+      ]
+    },
+    "counts": {
+      "VERIFIED_EXECUTION": 1,
+      "STATIC_AST_ANALYSIS": 11,
+      "UNVERIFIED_FILE_PRESENCE": 4
+    }
+  },
   "blocking_reasons": [],
   "observability_sync": {
-    "mode": "pending"
+    "mode": "live_synced",
+    "phoenix_logged": true,
+    "mlflow_run_id": "c67bc6902eea4ba18f130a90658268fb"
   },
-  "content_hash": "sha256:1405844d695d2ead082fd5ea9bf578111a76ea11fb96254ed2c64a6167c6bf6a"
+  "content_hash": "sha256:12681576bca562fb135443c76b567e31d5fbbd873227db6fb6febc6b2930deee"
 }

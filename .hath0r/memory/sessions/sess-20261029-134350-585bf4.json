@@ -1,0 +1,57 @@
+{
+  "schema_version": "hath0r.micro_session/1",
+  "session_id": "sess-20261029-134350-585bf4",
+  "prior_session_id": "sess-20261016-123220-5880ef",
+  "parent_session_id": "sess-20261016-123220-5880ef",
+  "revision": 3,
+  "content_hash": "sha256:bb4c38251c56cb6f2b31af1caefb8eeafb39b840b5dcd82b6b019319620883e0",
+  "base_graph_hash": "sha256:81990dcfb9188c218c413d4860989476e0c9604250cb62a09b65d588847de611",
+  "task_id": "rule-sync-and-workflow-upgrade",
+  "role": null,
+  "repo_name": "AgentGuard",
+  "status": "active",
+  "started_at": "2026-10-29T13:43:50.266991+00:00",
+  "updated_at": "2026-10-29T13:43:52.754540+00:00",
+  "ended_at": null,
+  "read_count": 1,
+  "write_count": 2,
+  "last_read_at": "2026-10-29T13:43:50.266991+00:00",
+  "last_write_at": "2026-10-29T13:43:52.754540+00:00",
+  "active_focus": "Active working session in AgentGuard",
+  "prior_summary": "Compounded eval:clean-repo-agentguard: Task Evaluation clean-repo-agentguard (R=1.00, PASS)",
+  "recalled_nodes": [
+    {
+      "id": "rule:cr-task-eval-001",
+      "type": "rule",
+      "label": "Automatic Task Evaluation & Scorecard Summary Gate (CR-TASK-",
+      "snippet": "Every task must execute and pass the 4-tier hybrid evaluation pipeline (R_task >= 0.80), p"
+    }
+  ],
+  "micro_entries": [
+    {
+      "timestamp": "2026-10-29T13:43:50.920539+00:00",
+      "kind": "observation",
+      "summary": "Harmonized rules, synced CLAUDE.md 1:1 with AGENTS.md (CR-CLAUDE-SYNC-001), initialized THREATMODEL.md, and upgraded workflows.",
+      "tags": [],
+      "node_id": null
+    },
+    {
+      "timestamp": "2026-10-29T13:43:52.754540+00:00",
+      "kind": "compound",
+      "summary": "Compounded eval:task-AgentGuard: Task Evaluation task-AgentGuard (R=1.00, PASS)",
+      "tags": [
+        "eval",
+        "cr-task-eval-001",
+        "task-agentguard",
+        "passed",
+        "compounded"
+      ],
+      "node_id": "eval:task-AgentGuard"
+    }
+  ],
+  "next_steps": [],
+  "compounded_node_ids": [
+    "eval:task-AgentGuard"
+  ],
+  "capsule_bytes": 2036
+}

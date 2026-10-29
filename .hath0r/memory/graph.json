@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "graph_id": "canonical-memory-space",
-  "updated_at": "2026-10-28T18:13:01.002256+00:00",
+  "updated_at": "2026-10-29T13:43:53.560637+00:00",
   "nodes": [
     {
       "id": "rule:cr-cli-entry-001",
@@ -167,7 +167,7 @@
       "updated_at": "2026-10-28T17:45:17.186086+00:00",
       "metadata": {
         "source_files": {
-          ".hath0r/evals/latest.json": "sha256:982c719fd26ab779e827064fc02b3f107d4c0c736c940ce5b9e3036220d14ae8"
+          ".hath0r/evals/latest.json": "sha256:1dd314bc07c1b16cb6980d35f7a6874625b137506b7e921afc2a2f994a8c7a3c"
         }
       }
     },
@@ -191,7 +191,7 @@
       "updated_at": "2026-10-28T18:13:00.880537+00:00",
       "metadata": {
         "source_files": {
-          ".hath0r/evals/latest.json": "sha256:982c719fd26ab779e827064fc02b3f107d4c0c736c940ce5b9e3036220d14ae8"
+          ".hath0r/evals/latest.json": "sha256:1dd314bc07c1b16cb6980d35f7a6874625b137506b7e921afc2a2f994a8c7a3c"
         }
       }
     },
@@ -219,6 +219,56 @@
         "write_count": 17,
         "status": "completed",
         "byte_size": 1892
+      }
+    },
+    {
+      "id": "eval:task-AgentGuard",
+      "type": "eval",
+      "label": "Task Evaluation task-AgentGuard (R=1.00, PASS)",
+      "content": "4-Tier Task Evaluation for task-AgentGuard on branch development: R_task=1.0000 (det=1.00, traj=1.00, adv=1.00, goal=1.00). Gate=PASSED.",
+      "importance": 0.85,
+      "tags": [
+        "eval",
+        "cr-task-eval-001",
+        "task-agentguard",
+        "passed",
+        "compounded"
+      ],
+      "valid_from": "2026-10-29T13:43:52.740296+00:00",
+      "valid_to": null,
+      "is_current": true,
+      "created_at": "2026-10-29T13:43:52.740296+00:00",
+      "updated_at": "2026-10-29T13:43:52.740296+00:00",
+      "metadata": {
+        "source_files": {
+          ".hath0r/evals/latest.json": "sha256:1dd314bc07c1b16cb6980d35f7a6874625b137506b7e921afc2a2f994a8c7a3c"
+        }
+      }
+    },
+    {
+      "id": "session:sess-20261029-134350-585bf4",
+      "type": "session",
+      "label": "Micro Session sess-20261029-134350-585bf4",
+      "content": "Micro Session sess-20261029-134350-585bf4 [active] | Focus: Active working session in AgentGuard | Reads: 1, Writes: 2 | Entries: Harmonized rules, synced CLAUDE.md 1:1 with AGENTS.md (CR-CLAUDE-SYNC-001), initialized THREATMODEL.md, and upgraded workflows.; Compounded eval:task-AgentGuard: Task Evaluation task-AgentGuard (R=1.00, PASS)",
+      "importance": 0.75,
+      "tags": [
+        "session",
+        "micro-session",
+        "active"
+      ],
+      "valid_from": "2026-10-29T13:43:50.266991+00:00",
+      "valid_to": null,
+      "is_current": true,
+      "created_at": "2026-10-29T13:43:50.266991+00:00",
+      "updated_at": "2026-10-29T13:43:52.754540+00:00",
+      "metadata": {
+        "session_id": "sess-20261029-134350-585bf4",
+        "prior_session_id": "sess-20261016-123220-5880ef",
+        "parent_session_id": "sess-20261016-123220-5880ef",
+        "read_count": 1,
+        "write_count": 2,
+        "status": "active",
+        "byte_size": 2036
       }
     }
   ],
@@ -396,8 +446,56 @@
       "weight": 1.0,
       "valid_from": "2026-10-28T15:20:15.163433+00:00",
       "is_current": true
+    },
+    {
+      "source": "session:sess-20261016-123220-5880ef",
+      "target": "session:sess-20261029-134350-585bf4",
+      "relation": "PRECEDES",
+      "weight": 1.0,
+      "valid_from": "2026-10-29T13:43:50.270364+00:00",
+      "is_current": true
+    },
+    {
+      "source": "session:sess-20261029-134350-585bf4",
+      "target": "concept:tri-graph",
+      "relation": "RELATES_TO",
+      "weight": 0.8,
+      "valid_from": "2026-10-29T13:43:50.270364+00:00",
+      "is_current": true
+    },
+    {
+      "source": "eval:task-AgentGuard",
+      "target": "concept:tri-graph",
+      "relation": "EVALUATES",
+      "weight": 1.0,
+      "valid_from": "2026-10-29T13:43:52.740296+00:00",
+      "is_current": true
+    },
+    {
+      "source": "eval:task-AgentGuard",
+      "target": "rule:cr-memory-compound-001",
+      "relation": "EVALUATES",
+      "weight": 1.0,
+      "valid_from": "2026-10-29T13:43:52.740296+00:00",
+      "is_current": true
+    },
+    {
+      "source": "eval:task-AgentGuard",
+      "target": "session:sess-20261029-134350-585bf4",
+      "relation": "EVALUATES",
+      "weight": 1.0,
+      "valid_from": "2026-10-29T13:43:52.740296+00:00",
+      "is_current": true
+    },
+    {
+      "source": "eval:task-AgentGuard",
+      "target": "session:sess-20261029-134350-585bf4",
+      "relation": "DERIVES_FROM",
+      "weight": 1.0,
+      "valid_from": "2026-10-29T13:43:52.757532+00:00",
+      "is_current": true
     }
   ],
-  "revision": 58,
-  "content_hash": "sha256:81990dcfb9188c218c413d4860989476e0c9604250cb62a09b65d588847de611"
+  "revision": 65,
+  "content_hash": "sha256:96354371042b25e79510b5b9af7b6cb5ffa432770b5bfbba71face7c0a327e87"
 }
