@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "graph_id": "canonical-memory-space",
-  "updated_at": "2026-10-29T14:16:53.234474+00:00",
+  "updated_at": "2026-10-31T16:16:31.294205+00:00",
   "nodes": [
     {
       "id": "rule:cr-cli-entry-001",
@@ -98,11 +98,11 @@
         "episode",
         "compounded"
       ],
-      "valid_from": "2026-10-29T14:16:51.139032+00:00",
+      "valid_from": "2026-10-31T16:16:29.920497+00:00",
       "valid_to": null,
       "is_current": true,
       "created_at": "2026-10-16T15:48:07.751323+00:00",
-      "updated_at": "2026-10-29T14:16:51.139032+00:00",
+      "updated_at": "2026-10-31T16:16:29.920497+00:00",
       "metadata": {}
     },
     {
@@ -167,15 +167,15 @@
       "updated_at": "2026-10-29T13:58:50.144329+00:00",
       "metadata": {
         "source_files": {
-          ".hath0r/evals/latest.json": "sha256:40e52d0252b44ac6a3982cbf2dd7460137d5195ce1e95af511f251881d59b94b"
+          ".hath0r/evals/latest.json": "sha256:067ce2cdef0d31d6d2c4eab81a9789a93cea67e7ef7834cbcd23ae164bf89dd5"
         }
       }
     },
     {
       "id": "eval:clean-repo-agentguard",
       "type": "eval",
-      "label": "Task Evaluation clean-repo-agentguard (R=1.00, PASS)",
-      "content": "4-Tier Task Evaluation for clean-repo-agentguard on branch development: R_task=1.0000 (det=1.00, traj=1.00, adv=1.00, goal=1.00). Gate=PASSED.",
+      "label": "Task Evaluation clean-repo-agentguard (R=0.94, PASS)",
+      "content": "4-Tier Task Evaluation for clean-repo-agentguard on branch development: R_task=0.9351 (det=0.94, traj=0.93, adv=0.94, goal=0.93). Gate=PASSED.",
       "importance": 0.85,
       "tags": [
         "eval",
@@ -184,14 +184,14 @@
         "passed",
         "compounded"
       ],
-      "valid_from": "2026-10-29T14:16:53.101742+00:00",
+      "valid_from": "2026-10-31T16:16:31.219550+00:00",
       "valid_to": null,
       "is_current": true,
       "created_at": "2026-10-28T15:20:15.150102+00:00",
-      "updated_at": "2026-10-29T14:16:53.101742+00:00",
+      "updated_at": "2026-10-31T16:16:31.219550+00:00",
       "metadata": {
         "source_files": {
-          ".hath0r/evals/latest.json": "sha256:40e52d0252b44ac6a3982cbf2dd7460137d5195ce1e95af511f251881d59b94b"
+          ".hath0r/evals/latest.json": "sha256:067ce2cdef0d31d6d2c4eab81a9789a93cea67e7ef7834cbcd23ae164bf89dd5"
         }
       }
     },
@@ -241,7 +241,7 @@
       "updated_at": "2026-10-29T13:43:52.740296+00:00",
       "metadata": {
         "source_files": {
-          ".hath0r/evals/latest.json": "sha256:40e52d0252b44ac6a3982cbf2dd7460137d5195ce1e95af511f251881d59b94b"
+          ".hath0r/evals/latest.json": "sha256:067ce2cdef0d31d6d2c4eab81a9789a93cea67e7ef7834cbcd23ae164bf89dd5"
         }
       }
     },
@@ -269,6 +269,32 @@
         "write_count": 9,
         "status": "completed",
         "byte_size": 1956
+      }
+    },
+    {
+      "id": "session:sess-20261031-161629-ca0afd",
+      "type": "session",
+      "label": "Micro Session sess-20261031-161629-ca0afd",
+      "content": "Micro Session sess-20261031-161629-ca0afd [completed] | Focus: clean-repo-AgentGuard | Reads: 2, Writes: 4 | Entries: Clean Repo Lifecycle completed for AgentGuard.; Compounded eval:clean-repo-agentguard: Task Evaluation clean-repo-agentguard (R=0.94, PASS)",
+      "importance": 0.75,
+      "tags": [
+        "session",
+        "micro-session",
+        "completed"
+      ],
+      "valid_from": "2026-10-31T16:16:29.893290+00:00",
+      "valid_to": "2026-10-31T16:16:29.947420+00:00",
+      "is_current": true,
+      "created_at": "2026-10-31T16:16:29.893290+00:00",
+      "updated_at": "2026-10-31T16:16:31.233509+00:00",
+      "metadata": {
+        "session_id": "sess-20261031-161629-ca0afd",
+        "prior_session_id": "sess-20261029-134350-585bf4",
+        "parent_session_id": "sess-20261029-134350-585bf4",
+        "read_count": 2,
+        "write_count": 4,
+        "status": "completed",
+        "byte_size": 2041
       }
     }
   ],
@@ -542,8 +568,48 @@
       "weight": 1.0,
       "valid_from": "2026-10-29T14:16:53.131742+00:00",
       "is_current": true
+    },
+    {
+      "source": "session:sess-20261029-134350-585bf4",
+      "target": "session:sess-20261031-161629-ca0afd",
+      "relation": "PRECEDES",
+      "weight": 1.0,
+      "valid_from": "2026-10-31T16:16:29.899777+00:00",
+      "is_current": true
+    },
+    {
+      "source": "session:sess-20261031-161629-ca0afd",
+      "target": "concept:tri-graph",
+      "relation": "RELATES_TO",
+      "weight": 0.8,
+      "valid_from": "2026-10-31T16:16:29.899777+00:00",
+      "is_current": true
+    },
+    {
+      "source": "episode:clean-repo-agentguard",
+      "target": "session:sess-20261031-161629-ca0afd",
+      "relation": "DERIVES_FROM",
+      "weight": 1.0,
+      "valid_from": "2026-10-31T16:16:29.936811+00:00",
+      "is_current": true
+    },
+    {
+      "source": "eval:clean-repo-agentguard",
+      "target": "session:sess-20261031-161629-ca0afd",
+      "relation": "EVALUATES",
+      "weight": 1.0,
+      "valid_from": "2026-10-31T16:16:31.219550+00:00",
+      "is_current": true
+    },
+    {
+      "source": "eval:clean-repo-agentguard",
+      "target": "session:sess-20261031-161629-ca0afd",
+      "relation": "DERIVES_FROM",
+      "weight": 1.0,
+      "valid_from": "2026-10-31T16:16:31.236101+00:00",
+      "is_current": true
     }
   ],
-  "revision": 92,
-  "content_hash": "sha256:471d6865c636eb372dc003711fa99c189e8bac8a08b93c97e05a1970bc3d0cef"
+  "revision": 102,
+  "content_hash": "sha256:cd0490d985c6e57ede8afceb17f90fbbc124c7c490cff2e2282c4bca58d082ad"
 }
