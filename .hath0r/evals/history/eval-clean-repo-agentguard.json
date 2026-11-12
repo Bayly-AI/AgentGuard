@@ -1,15 +1,15 @@
 {
   "schema_version": "hath0r.evals.scorecard/v1",
   "rule_id": "CR-TASK-EVAL-001",
-  "eval_id": "eval-20261031-161630-4509c8",
+  "eval_id": "eval-20261107-182415-2c8c0a",
   "task_id": "clean-repo-agentguard",
   "issue_number": null,
   "repo_name": "AgentGuard",
   "branch": "development",
-  "evaluated_at": "2026-10-31T16:16:30.514883+00:00",
-  "duration_ms": 694.54,
+  "evaluated_at": "2026-11-07T18:24:15.043519+00:00",
+  "duration_ms": 722.99,
   "passed_gate": true,
-  "r_task": 0.9351,
+  "r_task": 0.9361,
   "min_reward_threshold": 0.8,
   "weights": {
     "deterministic": 0.4,
@@ -19,8 +19,8 @@
   },
   "tier_scores": {
     "deterministic": 0.9391,
-    "trajectory": 0.9307,
-    "adversarial": 0.936,
+    "trajectory": 0.9308,
+    "adversarial": 0.94,
     "goal_alignment": 0.9287
   },
   "tiers": {
@@ -67,7 +67,7 @@
         "calibration_4h": {
           "passed": true,
           "is_fresh": false,
-          "age_hours": 50.49,
+          "age_hours": 220.62,
           "max_age_hours": 4.0
         },
         "local_quality_gates": {
@@ -278,25 +278,25 @@
       }
     },
     "trajectory": {
-      "score": 0.9307,
+      "score": 0.9308,
       "passed": true,
-      "tokens_used": 148,
+      "tokens_used": 144,
       "max_tokens": 50000,
-      "estimated_usd": 0.000444,
+      "estimated_usd": 0.000432,
       "max_usd": 0.25,
-      "session_id": "sess-20261031-161629-ca0afd",
+      "session_id": "sess-20261107-182414-0ea7ed",
       "session_reads": 2,
       "session_writes": 3,
       "session_bytes": 1981,
       "capsule_fill_ratio": 0.9673,
       "within_capsule_budget": true,
-      "latency_ms": 328.86,
-      "taguchi_quality_loss": 0.0016,
-      "taguchi_score": 0.976,
-      "snr_db": 15.68
+      "latency_ms": 321.4,
+      "taguchi_quality_loss": 0.0015,
+      "taguchi_score": 0.9762,
+      "snr_db": 15.88
     },
     "adversarial": {
-      "score": 0.936,
+      "score": 0.94,
       "passed": true,
       "adversarial_flaws_count": 0,
       "adversarial_flaws": [],
@@ -305,16 +305,14 @@
       "minor_findings": [
         "Cognitive complexity hotspot observed (avg 6.85, max 144, -0.0400)"
       ],
-      "added_lines_count": 64,
+      "added_lines_count": 0,
       "change_categories": {
         "ui": [],
         "script": [],
-        "text": [
-          "thresholds.json"
-        ],
+        "text": [],
         "other": []
       },
-      "changed_files_count": 1
+      "changed_files_count": 0
     },
     "goal_alignment": {
       "score": 0.9287,
@@ -450,7 +448,7 @@
         ".hath0r/memory/hashes.json",
         ".hath0r/memory/sessions/current.json",
         ".hath0r/memory/sessions/latest.json",
-        ".hath0r/memory/sessions/sess-20261031-161629-ca0afd.json"
+        ".hath0r/memory/sessions/sess-20261107-182414-0ea7ed.json"
       ],
       "UNVERIFIED_FILE_PRESENCE": []
     },
@@ -464,5 +462,5 @@
   "observability_sync": {
     "mode": "pending"
   },
-  "content_hash": "sha256:1cecc2c89607ea5ec82442c76e8f9727755a650cfcd94cd7f16525e24dec28bb"
+  "content_hash": "sha256:7fdd30b065e4e0a39964429745274482b50d6ea0d476c6800d4cff4ece33af65"
 }
